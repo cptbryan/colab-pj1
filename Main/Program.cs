@@ -7,8 +7,19 @@ namespace TextAdv
 	{
 		public static void Main(string [] args){
 			
-			Console.WriteLine("Here is stuff.");
-			Console.ReadLine();
+		string x;	
+			
+
+			do{
+
+			        Console.WriteLine("Enter a character");
+			        x  = Console.ReadLine();
+			        x.ToUpper();
+				Console.WriteLine(x);
+				
+
+
+			}while(x != "Y");
 			
 		}
 	}
