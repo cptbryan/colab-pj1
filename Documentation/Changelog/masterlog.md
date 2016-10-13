@@ -21,3 +21,8 @@
                                         
                                         
 10/11/2016 - Created Three Directories [ Changelog, Overview, UserStory ]. Created (and updated) Master Changelog masterlog.md -DB
+
+10/12/2016 - Populated user story document. -DB 
+
+
+
