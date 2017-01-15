@@ -24,3 +24,8 @@ The final project folder is Test. Test, as the name would suggest will be where 
 If you wish to make any additions here, feel free to do so. This will be a repository for unpolished ideas, quick thoughts, etc...
 
 *** Enter Text Here ***
+
+
+[Dbass-Jan/15/2017 - 2:00pm
+
+The main loop needs to consist of a boolean condition that the user can define.]
