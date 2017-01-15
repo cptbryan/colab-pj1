@@ -16,7 +16,7 @@ namespace TextAdv
 			
 			for(int i=0; i<x.Length; i++){
 				Console.Write(x[i]);
-				//System.Threading.Thread.Sleep(100);
+				System.Threading.Thread.Sleep(100);
 			};
 			System.Threading.Thread.Sleep(300);
 			Console.WriteLine("\n");
@@ -72,12 +72,12 @@ namespace TextAdv
 			
 			
 			// I don't plan on reusing this code much, so copy and paste will suffice for me.
-			// Commenting these out while I am debugging - 1/15/17
-			// for(int i=0; i<21; i++){
-			// 	Console.Write("[][]");
-			// 	System.Threading.Thread.Sleep(100);
-			// };
-			// Console.WriteLine("\n");
+			
+			for(int i=0; i<21; i++){
+				Console.Write("[][]");
+				System.Threading.Thread.Sleep(100);
+			};
+			Console.WriteLine("\n");
 			
 			// Here is the block of the text, nice and clean compared to what it would be without the function.
 			// FYI, The objects being passed into the function, were originally variables. 
@@ -88,12 +88,12 @@ namespace TextAdv
 			introScrawl(narration[2]);
 			introScrawl(narration[3]);
 			
-			// Commenting these out while I am debugging - 1/15/17
-			// for(int i=0; i<21; i++){
-			// 	Console.Write("[][]");
-			// 	System.Threading.Thread.Sleep(100);
-			// };
-			// Console.WriteLine("\n");
+			
+			for(int i=0; i<21; i++){
+				Console.Write("[][]");
+				System.Threading.Thread.Sleep(100);
+			};
+			Console.WriteLine("\n");
 			
 			
 			/* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
