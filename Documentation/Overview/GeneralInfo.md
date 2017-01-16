@@ -26,6 +26,27 @@ If you wish to make any additions here, feel free to do so. This will be a repos
 *** Enter Text Here ***
 
 
-[Dbass-Jan/15/2017 - 2:00pm
+[Dbass-Jan/15/2017 - 7:00pm
 
-The main loop needs to consist of a boolean condition that the user can define.]
+Okay, so here is the current gameplan:
+
+The main loop needs to consist of a boolean condition. This will act as a placeholder menu of sorts. Once we have a bit of content, we can start thinking about the "menu" system.
+Currently I have a verrrry small "game" in place. It has next to no content. No systems are in place, etc...
+
+What we need to do next, is determine what our first item to work on is. I will start the priority list, but I won't be able to think of everything.
+
+1. Main Loop functionality (i.e. error handling, ease of use, user interface, ASCII art).
+2. Handling of user input (i.e. "What if the user does this". We need to be pithy and clever(God help us)).
+3. Room system.
+4. Movement system.
+5. Inventory system.
+6. Materials system.
+7. Item list.
+8. Enemy types.
+9. Enemy descriptions.
+10. Combat system.
+11. Magic?
+12. Randomization (in dialogue, in the "Looting" system, in enemy encounters, in rooms, in everything).
+13. TBD.
+]
+

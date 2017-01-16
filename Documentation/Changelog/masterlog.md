@@ -24,5 +24,8 @@
 
 10/12/2016 - Populated user story document. -DB 
 
+1/15/2017 - Wrote some example code to give a feel for the ideas behind the game loop. I also commented the code to some degree. Inform me if the commenting isn't substantial enough to convey my intent.
+            Also wrote up a list of action items for us to ponder. -DB
+
 
 
