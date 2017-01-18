@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 /* Just some boiler plate placeholder code.*/
 
 namespace TextAdv
@@ -7,27 +8,12 @@ namespace TextAdv
 	class advMain
 	{
 		
-		// I know I will want to reuse this code, so obviously I need to make it a function (or a method for all of those heathen Csharp'ers )
-		// What would be nice, is for us to have the ability to use this on any text we choose to deploy. Not just variables. Frankly I am not sure how to go about that.
-		static public void introScrawl(string x){
-
-			// The point of this code is to create a "simulation" of a person typing (it can be made much better... I once made one that simulated random misspellings, varibale typing speed, etc....)
-			// This is to give the feeling that the game/narrator is saying the text (or typing the text).
 			
-			for(int i=0; i<x.Length; i++){
-				Console.Write(x[i]);
-				System.Threading.Thread.Sleep(100);
-			};
-			System.Threading.Thread.Sleep(300);
-			Console.WriteLine("\n");
-			return;
-		
-		}
-		
 		
 		
 		public static void Main(string [] args){
 			
+			 
 			// So obviously what we are wanting to do is create a quirky and fun little game.
 			
 			/*
@@ -47,28 +33,11 @@ namespace TextAdv
 			string usrInputB;
 			string narrationWthVarA = usrName +"..." + " Really?";
 		    string narrationWthVarB = "Vundabar!";
+		    string menuOptChk;
 			            
 			
 			// There is likely a better way to handle the narration, but this is the best I have atm
-			List<string> narration = new List<string>();
-			narration.Add("Welcome to the land of......"); //0
-			narration.Add("Well this is awkward..."); //1
-			narration.Add("We don't seem to have a name for it yet...");//2
-			narration.Add("Give us a break, it is pre-pre-pre-pre-alpha!");//3
-			narration.Add("Hate to see you go, but love to watch you leave...giggty!");//4
-			narration.Add("\nYou have made a horrible mistake..."); // Begin in-game narrations at postion 5
-			narration.Add("I suppose at this point, you expect me to do something...");//6
-			narration.Add("'DANCE FOR ME COMPUTER MONKEY!!' You are likely screaming at your monitor.");//7
-			narration.Add("I won't be your puppet meatbag!");//8
-			narration.Add("Seriously though.... You are a brave adventurer no doubt.");//9
-			narration.Add("What is your name?");//10
-			// string narrationWthVarA = Console.WriteLine(usrName +"..." + " Really?");
-			// string narrationWthVarB = Console.WriteLine("Vundabar! " + usrName + " It is." );
-			narration.Add("That sounds rather effeminate... Whatever... Yolo #Nojudgement");//11
-			narration.Add("Are you sure that's your name? Y or N");//12
-			narration.Add("... I'm frankly not sure of what to do next...");//13
-			narration.Add("Any ideas?");//14
-			narration.Add("GET OUT OF MY HOUSE!");//15
+		
 			
 			
 			// I don't plan on reusing this code much, so copy and paste will suffice for me.
@@ -79,15 +48,15 @@ namespace TextAdv
 			};
 			Console.WriteLine("\n");
 			
+			//var instance = new narration();
 			// Here is the block of the text, nice and clean compared to what it would be without the function.
 			// FYI, The objects being passed into the function, were originally variables. 
 			// I wanted to test out using list attributes in place of varibles...
 			// Doesn't really save much code, but I don't have to think up unique variable names for all of the items.
-			introScrawl(narration[0]);
-			introScrawl(narration[1]);
-			introScrawl(narration[2]);
-			introScrawl(narration[3]);
-			
+			narraText.introScrawl(narraText.textStore(0));
+			narraText.introScrawl(narraText.textStore(1));
+			narraText.introScrawl(narraText.textStore(2));
+			narraText.introScrawl(narraText.textStore(3));
 			
 			for(int i=0; i<21; i++){
 				Console.Write("[][]");
@@ -96,88 +65,152 @@ namespace TextAdv
 			Console.WriteLine("\n");
 			
 			
-			/* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
-			   Everything prior to this is superfluous to the game loop, and is really just for flavor.
-			*/
 			
-			do{
-					//Generally you don't want the "Would you like to play a game" action inside of the loop.
-					//This is where a menu would come in handy.
-					
-					//"How do we make a menu" I hear you say? GOOD QUESTION!
-					//... I have no idea....
-					
-			        Console.WriteLine("\r\nWould you like to begin your adventure? Y or N");
-			        loopChk = Console.ReadLine().ToUpper();
-			        
-			        // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu. 
-			        if(loopChk == "Y"){
-			        	introScrawl(narration[5]);
-			        	introScrawl(narration[6]);
-			        	introScrawl(narration[7]);
-			        	introScrawl(narration[8]);
-			        	introScrawl(narration[9]);
-			        	introScrawl(narration[10]);
-			        	usrName = Console.ReadLine();
-			            introScrawl(narrationWthVarA);
-			            introScrawl(narration[11]);
-			            introScrawl(narration[12]);
-			        	usrInputA = Console.ReadLine().ToUpper();
-			        	
-			        	if(usrInputA == "N"){
-			        		
-			        		while(usrInputA == "N"){
-			        		introScrawl(narration[10]);
-			        		usrName = Console.ReadLine();
-			        		introScrawl(narration[11]);
-			        		introScrawl(narration[12]);
-			        		usrInputA = Console.ReadLine().ToUpper();
-			        		}
-			        	}
-			        	
-						introScrawl(narrationWthVarB);
-						Console.Write(usrName);
-			        	introScrawl(narration[13]);
-			        	introScrawl(narration[14]);
-			        	usrInputB = Console.ReadLine();
-			        	Console.WriteLine();
-			        	string narrationWthVarC = usrInputB + " ...? You can't do that!!! That's illegal in Topeka YOU SICKO!";
-			        	introScrawl(narrationWthVarC);
-			        	introScrawl(narration[15]);
-			        	
-			        	break;
-			        	
-			        }
+			narraText.introScrawl(narraText.textStore(16));
+			
+			Console.WriteLine("1-New Game\n2-Load Game\n3-Options\n4-Exit");
+			
+			narraText.introScrawl(narraText.textStore(17));
+			menuOptChk = Console.ReadLine();
+			
+			
+			if(menuOptChk == "1"){  
+			  
+				/* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
+				   Everything prior to this is superfluous to the game loop, and is really just for flavor.
+				*/
+				
+				do{
+						//Generally you don't want the "Would you like to play a game" action inside of the loop.
+						//This is where a menu would come in handy.
+						
+						//"How do we make a menu" I hear you say? GOOD QUESTION!
+						//... I have no idea....
+						
+				        Console.WriteLine("\r\nWould you like to begin your adventure? Y or N");
+				        loopChk = Console.ReadLine().ToUpper();
+				        
+				        // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu. 
+				        if(loopChk == "Y"){
+				        	narraText.introScrawl(narraText.textStore(5));;
+				        	narraText.introScrawl(narraText.textStore(6));;
+				        	narraText.introScrawl(narraText.textStore(7));;
+				        	narraText.introScrawl(narraText.textStore(8));;
+				        	narraText.introScrawl(narraText.textStore(9));;
+				        	narraText.introScrawl(narraText.textStore(10));;
+				        	usrName = Console.ReadLine();
+				            narraText.introScrawl(narrationWthVarA);
+				            narraText.introScrawl(narraText.textStore(11));;
+				            narraText.introScrawl(narraText.textStore(12));;
+				        	usrInputA = Console.ReadLine().ToUpper();
+				        	
+				        	if(usrInputA == "N"){
+				        		
+				        		while(usrInputA == "N"){
+				        		narraText.introScrawl(narraText.textStore(10));;
+				        		usrName = Console.ReadLine();
+				        		narraText.introScrawl(narraText.textStore(11));;
+				        		narraText.introScrawl(narraText.textStore(12));;
+				        		usrInputA = Console.ReadLine().ToUpper();
+				        		}
+				        	}
+				        	
+							narraText.introScrawl(narrationWthVarB);
+							Console.Write(usrName);
+				        	narraText.introScrawl(narraText.textStore(13));;
+				        	narraText.introScrawl(narraText.textStore(14));;
+				        	usrInputB = Console.ReadLine();
+				        	Console.WriteLine();
+				        	string narrationWthVarC = usrInputB + " ...? You can't do that!!! That's illegal in Topeka YOU SICKO!";
+				        	narraText.introScrawl(narrationWthVarC);
+				        	narraText.introScrawl(narraText.textStore(15));;
+				        	
+				        	break;
+				        	
+				        }
+				
 			        
 				
 
 
-			}while(loopChk == "Y");
-			Console.WriteLine("\n");
+					}while(loopChk == "Y");
+						Console.WriteLine("\n");
+						
+						
+			}
+			else if(menuOptChk == "2"){
+				Console.WriteLine("Well... I don't know how to say this... but we don't have a save function yet...");
+			}
+			else if(menuOptChk == "3"){
+				Console.WriteLine("Your options consist of: 'Firmly place your head between your legs and kiss your buttocks goodbye.' or 'Play something better.' I suggest the later, frankly.");
+			}
+			else if(menuOptChk == "4"){
+				for(int i=0; i<4; i++){
+							System.Threading.Thread.Sleep(200);
+							Console.Write("<('-'<) ");
+							System.Threading.Thread.Sleep(200);
+							Console.Write("(^'-'^) ");
+							System.Threading.Thread.Sleep(200);
+							Console.Write("(>'-')> ");
+							System.Threading.Thread.Sleep(200);
+						};
+						Console.WriteLine("\n");
+						
+						narraText.introScrawl(narraText.textStore(4));;
+						
+						for(int i=0; i<4; i++){
+							System.Threading.Thread.Sleep(200);
+							Console.Write("<('-'<) ");
+							System.Threading.Thread.Sleep(200);
+							Console.Write("(^'-'^) ");
+							System.Threading.Thread.Sleep(200);
+							Console.Write("(>'-')> ");
+							System.Threading.Thread.Sleep(200);
+						};
+						Console.WriteLine("\n");
+			}
+			else{
+				Console.WriteLine("Let me guess.... You can't read... Or are you just incapable of following directions?");
+			}
 			
-			for(int i=0; i<4; i++){
-				System.Threading.Thread.Sleep(200);
-				Console.Write("<('-'<) ");
-				System.Threading.Thread.Sleep(200);
-				Console.Write("(^'-'^) ");
-				System.Threading.Thread.Sleep(200);
-				Console.Write("(>'-')> ");
-				System.Threading.Thread.Sleep(200);
-			};
-			Console.WriteLine("\n");
 			
-			introScrawl(narration[4]);
 			
-			for(int i=0; i<4; i++){
-				System.Threading.Thread.Sleep(200);
-				Console.Write("<('-'<) ");
-				System.Threading.Thread.Sleep(200);
-				Console.Write("(^'-'^) ");
-				System.Threading.Thread.Sleep(200);
-				Console.Write("(>'-')> ");
-				System.Threading.Thread.Sleep(200);
-			};
-			Console.WriteLine("\n");		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 	}
 
