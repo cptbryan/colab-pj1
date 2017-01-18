@@ -29,7 +29,7 @@ namespace TextAdv
 			string loopChk;
 			
 			string usrName = "";
-			string usrInputA;
+            string usrInputA;
 			string usrInputB;
 			string narrationWthVarA = usrName +"..." + " Really?";
 		    string narrationWthVarB = "Vundabar!";
@@ -92,39 +92,60 @@ namespace TextAdv
 				        
 				        // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu. 
 				        if(loopChk == "Y"){
-				        	narraText.introScrawl(narraText.textStore(5));;
-				        	narraText.introScrawl(narraText.textStore(6));;
-				        	narraText.introScrawl(narraText.textStore(7));;
-				        	narraText.introScrawl(narraText.textStore(8));;
-				        	narraText.introScrawl(narraText.textStore(9));;
-				        	narraText.introScrawl(narraText.textStore(10));;
+				        	narraText.introScrawl(narraText.textStore(5));
+				        	narraText.introScrawl(narraText.textStore(6));
+				        	narraText.introScrawl(narraText.textStore(7));
+				        	narraText.introScrawl(narraText.textStore(8));
+				        	narraText.introScrawl(narraText.textStore(9));
+				        	narraText.introScrawl(narraText.textStore(10));
 				        	usrName = Console.ReadLine();
 				            narraText.introScrawl(narrationWthVarA);
-				            narraText.introScrawl(narraText.textStore(11));;
-				            narraText.introScrawl(narraText.textStore(12));;
+				            narraText.introScrawl(narraText.textStore(11));
+				            narraText.introScrawl(narraText.textStore(12));
 				        	usrInputA = Console.ReadLine().ToUpper();
 				        	
-				        	if(usrInputA == "N"){
+				        	if(usrInputA == "N")
+                            {
 				        		
-				        		while(usrInputA == "N"){
-				        		narraText.introScrawl(narraText.textStore(10));;
+				        		while(usrInputA == "N")
+                                {
+				        		narraText.introScrawl(narraText.textStore(10));
 				        		usrName = Console.ReadLine();
-				        		narraText.introScrawl(narraText.textStore(11));;
-				        		narraText.introScrawl(narraText.textStore(12));;
+				        		narraText.introScrawl(narraText.textStore(11));
+				        		narraText.introScrawl(narraText.textStore(12));
 				        		usrInputA = Console.ReadLine().ToUpper();
 				        		}
 				        	}
 				        	
 							narraText.introScrawl(narrationWthVarB);
 							Console.Write(usrName);
-				        	narraText.introScrawl(narraText.textStore(13));;
-				        	narraText.introScrawl(narraText.textStore(14));;
+				        	narraText.introScrawl(narraText.textStore(13));
+				        	narraText.introScrawl(narraText.textStore(14));
 				        	usrInputB = Console.ReadLine();
 				        	Console.WriteLine();
 				        	string narrationWthVarC = usrInputB + " ...? You can't do that!!! That's illegal in Topeka YOU SICKO!";
 				        	narraText.introScrawl(narrationWthVarC);
-				        	narraText.introScrawl(narraText.textStore(15));;
-				        	
+				        	narraText.introScrawl(narraText.textStore(15));
+                            narraText.textStore(18);//beginning of character creation
+                            narraText.textStore(19);
+                            charAtts playerLook = new charAtts();//here is the first instantiation of the charAtts class. I did this
+                            // to keep the main program file cleaner and not clutter it with variable declarations and such.
+                            playerLook.gender = Console.ReadLine.ToUpper();
+                        if (playerLook.gender == "MALE" || "M" || "BOY" || "MAN")
+                        {
+                            playerLook.gender = "m";
+                        }
+                        else if (playerLook.gender == "FEMALE" || "F" || "GIRL" || "WOMAN")
+                        {
+                            playerLook.gender = "f";
+                        }
+                        else
+                        {
+                            Console.WriteLine("It is very possible that you don't consider yourself one or the other, however, that isn't applicable here.");
+                        }
+                            
+                            
+
 				        	break;
 				        	
 				        }
