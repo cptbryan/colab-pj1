@@ -35,7 +35,7 @@ namespace TextAdv{
             narration.Add("Are you a male or a female? (One or the other, this isn't California.)");//19
             // string narrationWithGender = Console.WriteLine("Ok, you are a " + {0}, gender)
             narration.Add("What color is your hair?");//20
-            narration.Add("")
+            narration.Add("");
 
 
 

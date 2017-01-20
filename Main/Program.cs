@@ -74,91 +74,193 @@ namespace TextAdv
 			menuOptChk = Console.ReadLine();
 			
 			
-			if(menuOptChk == "1"){  
-			  
-				/* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
+			if(menuOptChk == "1"){
+
+                /* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
 				   Everything prior to this is superfluous to the game loop, and is really just for flavor.
 				*/
-				
-				do{
-						//Generally you don't want the "Would you like to play a game" action inside of the loop.
-						//This is where a menu would come in handy.
-						
-						//"How do we make a menu" I hear you say? GOOD QUESTION!
-						//... I have no idea....
-						
-				        Console.WriteLine("\r\nWould you like to begin your adventure? Y or N");
-				        loopChk = Console.ReadLine().ToUpper();
-				        
-				        // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu. 
-				        if(loopChk == "Y"){
-				        	narraText.introScrawl(narraText.textStore(5));
-				        	narraText.introScrawl(narraText.textStore(6));
-				        	narraText.introScrawl(narraText.textStore(7));
-				        	narraText.introScrawl(narraText.textStore(8));
-				        	narraText.introScrawl(narraText.textStore(9));
-				        	narraText.introScrawl(narraText.textStore(10));
-				        	usrName = Console.ReadLine();
-				            narraText.introScrawl(narrationWthVarA);
-				            narraText.introScrawl(narraText.textStore(11));
-				            narraText.introScrawl(narraText.textStore(12));
-				        	usrInputA = Console.ReadLine().ToUpper();
-				        	
-				        	if(usrInputA == "N")
+
+                do
+                {
+                    //Generally you don't want the "Would you like to play a game" action inside of the loop.
+                    //This is where a menu would come in handy.
+
+                    //"How do we make a menu" I hear you say? GOOD QUESTION!
+                    //... I have no idea....
+
+                    Console.WriteLine("\r\nWould you like to begin your adventure? Y or N");
+                    loopChk = Console.ReadLine().ToUpper();
+
+                    // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu. 
+                    if (loopChk == "Y")
+                    {
+                        narraText.introScrawl(narraText.textStore(5));
+                        narraText.introScrawl(narraText.textStore(6));
+                        narraText.introScrawl(narraText.textStore(7));
+                        narraText.introScrawl(narraText.textStore(8));
+                        narraText.introScrawl(narraText.textStore(9));
+                        narraText.introScrawl(narraText.textStore(10));
+                        usrName = Console.ReadLine();
+                        narraText.introScrawl(narrationWthVarA);
+                        narraText.introScrawl(narraText.textStore(11));
+                        narraText.introScrawl(narraText.textStore(12));
+                        usrInputA = Console.ReadLine().ToUpper();
+
+                        if (usrInputA == "N")
+                        {
+
+                            while (usrInputA == "N")
                             {
-				        		
-				        		while(usrInputA == "N")
+                                narraText.introScrawl(narraText.textStore(10));
+                                usrName = Console.ReadLine();
+                                narraText.introScrawl(narraText.textStore(11));
+                                narraText.introScrawl(narraText.textStore(12));
+                                usrInputA = Console.ReadLine().ToUpper();
+                            }
+                        }
+
+                        narraText.introScrawl(narrationWthVarB);
+                        Console.Write(usrName);
+                        narraText.introScrawl(narraText.textStore(13));
+                        narraText.introScrawl(narraText.textStore(14));
+                        usrInputB = Console.ReadLine();
+                        Console.WriteLine();
+                        string narrationWthVarC = usrInputB + " ...? You can't do that!!! That's illegal in Topeka YOU SICKO!";
+                        narraText.introScrawl(narrationWthVarC);
+                        narraText.introScrawl(narraText.textStore(15));
+                        narraText.textStore(18);//beginning of character creation
+                        narraText.textStore(19);                        
+                        do {
+                            charAtts charAppear = new charAtts();// here is the first instantiation of the charAtts class. I did this
+                            charAppear.gender = Console.ReadLine.ToUpper();// to keep the main program file cleaner and not clutter it with variable declarations and such.
+                            switch (charAppear.gender)//changed this block of code from else if  to switch to clean up code-------------------------------->
+                            {
+                                case "MALE":
+                                    {
+                                        charAppear.gender = "Male";
+                                        break;
+                                    }
+                                case "M":
+                                    {
+                                        charAppear.gender = "Male";
+                                        break;
+                                    }
+                                case "BOY":
+                                    {
+                                        charAppear.gender = "Male";
+                                        break;
+                                    }
+                                case "MAN":
+                                    {
+                                        charAppear.gender = "Male";
+                                        break;
+                                    }
+                                case "DUDE":
+                                    {
+                                        charAppear.gender = "Male";
+                                        break;
+                                    }
+                                case "FEMALE":
+                                    {
+                                        charAppear.gender = "Female";
+                                        break;
+                                    }
+                                case "F":
+                                    {
+                                        ccharAppear.gender = "Female";
+                                        break;
+                                    }
+                                case "GIRL":
+                                    {
+                                        charAppear.gender = "Female";
+                                        break;
+                                    }
+                                case "CHICK":
+                                    {
+                                        charAppear.gender = "Female";
+                                        break;
+                                    }
+                                case "WOMAN":
+                                    {
+                                        charAppear.gender = "Female";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        Console.WriteLine("It is very possible that you don't consider yourself one or the other, however, that isn't applicable here.");
+                                        break;
+                                    }
+                            }
+                         while (charAppear.gender != "Male" || "Female");
+                            narraText.textStore(20);
+                            charAppear.hairColor = Console.ReadLine.ToUpper();
+                            do
+                            {
+                                switch(charAppear.hairColor)
                                 {
-				        		narraText.introScrawl(narraText.textStore(10));
-				        		usrName = Console.ReadLine();
-				        		narraText.introScrawl(narraText.textStore(11));
-				        		narraText.introScrawl(narraText.textStore(12));
-				        		usrInputA = Console.ReadLine().ToUpper();
-				        		}
-				        	}
-				        	
-							narraText.introScrawl(narrationWthVarB);
-							Console.Write(usrName);
-				        	narraText.introScrawl(narraText.textStore(13));
-				        	narraText.introScrawl(narraText.textStore(14));
-				        	usrInputB = Console.ReadLine();
-				        	Console.WriteLine();
-				        	string narrationWthVarC = usrInputB + " ...? You can't do that!!! That's illegal in Topeka YOU SICKO!";
-				        	narraText.introScrawl(narrationWthVarC);
-				        	narraText.introScrawl(narraText.textStore(15));
-                            narraText.textStore(18);//beginning of character creation
-                            narraText.textStore(19);
-                            charAtts playerLook = new charAtts();//here is the first instantiation of the charAtts class. I did this
-                            // to keep the main program file cleaner and not clutter it with variable declarations and such.
-                            playerLook.gender = Console.ReadLine.ToUpper();
-                        if (playerLook.gender == "MALE" || "M" || "BOY" || "MAN")
-                        {
-                            playerLook.gender = "m";
-                        }
-                        else if (playerLook.gender == "FEMALE" || "F" || "GIRL" || "WOMAN")
-                        {
-                            playerLook.gender = "f";
-                        }
-                        else
-                        {
-                            Console.WriteLine("It is very possible that you don't consider yourself one or the other, however, that isn't applicable here.");
-                        }
-                            
-                            
+                                    case "BLACK":
+                                        {
+                                            charAppear.hairColor = "Black";
+                                            break;
+                                        }
+                                    case "BLONDE":
+                                        {
+                                            charAppear.hairColor = "Blonde";
+                                            break;
+                                        }
+                                    case "BROWN":
+                                        {
+                                            charAppear.hairColor = "Brown";
+                                            break;
+                                        }
+                                    case "RED":
+                                        {
+                                            charAppear.hairColor = "Red";
+                                            break;
+                                        }
+                                    case "WHITE":
+                                        {
+                                            charAppear.hairColor = "White";
+                                            break;
+                                        }
+                                    case "BALD":
+                                        {
+                                            charAppear.hairColor = "Bald";
+                                            Console.WriteLine("Well you are like my father in law.");
+                                            break;
+                                        }
+                                    case "NONE":
+                                        {
+                                            charAppear.hairColor = "Bald";
+                                            Console.WriteLine("Well you are like my father in law.");
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            Console.WriteLine("So are you too inept to know what your hair color is? Let's try again.");
+                                            break;
+                                        }
+                                }
+                                while (charAppear.hairColor != "Black" || "Blonde" || "Brown" || "Red" || "White" || "Bald" || "None");
 
-				        	break;
-				        	
-				        }
-				
-			        
-				
 
 
-					}while(loopChk == "Y");
-						Console.WriteLine("\n");
-						
-						
-			}
+                            }
+
+                                break;
+
+                        }
+
+
+
+
+
+                    } while (loopChk == "Y") ;
+                    Console.WriteLine("\n");
+                }
+
+
+                
 			else if(menuOptChk == "2"){
 				Console.WriteLine("Well... I don't know how to say this... but we don't have a save function yet...");
 			}
