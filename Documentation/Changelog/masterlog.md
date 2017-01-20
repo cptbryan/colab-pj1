@@ -31,4 +31,6 @@
 
 1/19/2017 - Continued to evolve character customization. Changed customization object instantiation from "playerLook" to "charAppear" to signify that it is infact appearance related. Also changed if else statements to switches in order to de clutter the code. Also continued to add dialogue, although my dialouge writing skills are nowhere near the caliber of my collegue. - EB
 
+1/20/2017 - Finished what is our based character customization system. Created a VS project. Went through and fixed some bugs and syntatical errors. Plan is to add weapon selection system in next. - EB
+
 
