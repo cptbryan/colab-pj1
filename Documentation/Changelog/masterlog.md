@@ -29,5 +29,6 @@
 
 1/18/2017 - Began the creation of a basic character customization system. Added charAtts class to hold character selections. Will most likely evolve into something far greater than hair color or clothes color. - EB
 
+1/19/2017 - Continued to evolve character customization. Changed customization object instantiation from "playerLook" to "charAppear" to signify that it is infact appearance related. Also changed if else statements to switches in order to de clutter the code. Also continued to add dialogue, although my dialouge writing skills are nowhere near the caliber of my collegue. - EB
 
 
