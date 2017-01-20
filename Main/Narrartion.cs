@@ -33,9 +33,8 @@ namespace TextAdv{
 			narration.Add("Pick an option... Or don't... I don't care. (Enter a number)");//17
             narration.Add("It's time to decide what you look like.");//18
             narration.Add("Are you a male or a female? (One or the other, this isn't California.)");//19
-            // string narrationWithGender = Console.WriteLine("Ok, you are a " + {0}, gender)
             narration.Add("What color is your hair?");//20
-            narration.Add("");
+            narration.Add("What is your preferred armor? Leather, Chainmail, Metal Suit?");//21
 
 
 

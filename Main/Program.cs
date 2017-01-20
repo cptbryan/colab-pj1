@@ -80,7 +80,7 @@ namespace TextAdv
 				   Everything prior to this is superfluous to the game loop, and is really just for flavor.
 				*/
 
-                do
+                do//start game loop -------------------------------------->
                 {
                     //Generally you don't want the "Would you like to play a game" action inside of the loop.
                     //This is where a menu would come in handy.
@@ -129,10 +129,10 @@ namespace TextAdv
                         narraText.introScrawl(narrationWthVarC);
                         narraText.introScrawl(narraText.textStore(15));
                         narraText.textStore(18);//beginning of character creation
-                        narraText.textStore(19);                        
-                        do {
-                            charAtts charAppear = new charAtts();// here is the first instantiation of the charAtts class. I did this
-                            charAppear.gender = Console.ReadLine.ToUpper();// to keep the main program file cleaner and not clutter it with variable declarations and such.
+                        narraText.textStore(19);
+                        charAtts charAppear = new charAtts();// here is the first instantiation of the charAtts class. I did this
+                        do {                                // to keep the main program file cleaner and not clutter it with variable declarations and such.
+                                charAppear.gender = Console.ReadLine.ToUpper();
                             switch (charAppear.gender)//changed this block of code from else if  to switch to clean up code-------------------------------->
                             {
                                 case "MALE":
@@ -192,6 +192,8 @@ namespace TextAdv
                                     }
                             }
                          while (charAppear.gender != "Male" || "Female");
+                         
+
                             narraText.textStore(20);
                             charAppear.hairColor = Console.ReadLine.ToUpper();
                             do
@@ -237,24 +239,87 @@ namespace TextAdv
                                         }
                                     default:
                                         {
-                                            Console.WriteLine("So are you too inept to know what your hair color is? Let's try again.");
+                                            Console.WriteLine("So, are you too inept to know what your hair color is? Let's try again.");
                                             break;
                                         }
                                 }
-                                while (charAppear.hairColor != "Black" || "Blonde" || "Brown" || "Red" || "White" || "Bald" || "None");
+                               while (charAppear.hairColor != "Black" || "Blonde" || "Brown" || "Red" || "White" || "Bald" || "None");
+                                narraText.textStore(21);
+                                charAppear.Armor = Console.ReadLine().ToUpper;
+                                do
+                                {
+                                    switch(charAppear.armor)
+                                    {
+                                        case "LEATHER":
+                                            {
+                                                charAppear.armor = "Leather";
+                                                //charAppear.armorStrenth = TBD; here, we need to assign what the strength of that armor will be based off the user choice.
+                                                //charAppear.armorWeight = TBD;
+                                                break;
+                                            }
+                                        case "HIDE":
+                                            {
+                                                charAppear.armor = "Leather";
+                                                //charAppear.armorStrenth = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                                break;
+                                            }
+                                        case "CHAINMAIL":
+                                            {
+                                                charAppear.armor = "Chainmail";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                                break;
+                                            }
+                                        case "CHAIN":
+                                            {
+                                                charAppear.armor = "Chainmail";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                                break;
+                                            }
+                                        case "MAIL":
+                                            {
+                                                charAppear.armor = "Chainmail";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                                break;
+                                            }
+                                        case "METAL SUIT":
+                                            {
+                                                charAppear.armor = "Metal Suit";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                            }
+                                        case "SUIT OF ARMOR":
+                                            {
+                                                charAppear.armor = "Metal Suit";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                            }
+                                        case "METAL":
+                                            {
+                                                charAppear.armor = "Metal Suit";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                            }
+                                        case "SUIT":
+                                            {
+                                                charAppear.armor = "Metal Suit";
+                                                //charAppear.armorStrength = TBD;
+                                                //charAppear.armorWeight = TBD;
+                                            }
+                                    }
+                                }
 
+                               Console.WriteLine("Picked Attributes: /n{0}/n{1}/{2}/n{3}/n", charAppear.gender, charAppear.hairColor, charAppear.armor);
 
 
                             }
 
                                 break;
 
-                        }
-
-
-
-
-
+                        }//----------------------> End Game Loop
                     } while (loopChk == "Y") ;
                     Console.WriteLine("\n");
                 }
@@ -294,48 +359,7 @@ namespace TextAdv
 			}
 			else{
 				Console.WriteLine("Let me guess.... You can't read... Or are you just incapable of following directions?");
-			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			}		
 		}
 	}
-
-
 }

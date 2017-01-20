@@ -6,6 +6,9 @@ public class charAtts
 	{
         string gender;
         string hairColor;
+        string shirtColor;
+        string armor;
+        int armorStrength;
         return;
 	}
 }
