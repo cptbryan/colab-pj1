@@ -132,7 +132,7 @@ namespace TextAdv
                         narraText.textStore(19);
                         charAtts charAppear = new charAtts();// here is the first instantiation of the charAtts class. I did this
                         do {                                // to keep the main program file cleaner and not clutter it with variable declarations and such.
-                                charAppear.gender = Console.ReadLine.ToUpper();
+                            charAppear.gender = Console.ReadLine().ToUpper();
                             switch (charAppear.gender)//changed this block of code from else if  to switch to clean up code-------------------------------->
                             {
                                 case "MALE":
@@ -167,7 +167,7 @@ namespace TextAdv
                                     }
                                 case "F":
                                     {
-                                        ccharAppear.gender = "Female";
+                                        charAppear.gender = "Female";
                                         break;
                                     }
                                 case "GIRL":
@@ -191,14 +191,14 @@ namespace TextAdv
                                         break;
                                     }
                             }
-                         while (charAppear.gender != "Male" || "Female");
+                         while (charAppear.gender == "Male" || charAppear.gender == "Female");
                          
 
                             narraText.textStore(20);
-                            charAppear.hairColor = Console.ReadLine.ToUpper();
+                            charAppear.hairColor = Console.ReadLine().ToUpper();
                             do
                             {
-                                switch(charAppear.hairColor)
+                                switch (charAppear.hairColor)
                                 {
                                     case "BLACK":
                                         {
@@ -243,12 +243,12 @@ namespace TextAdv
                                             break;
                                         }
                                 }
-                               while (charAppear.hairColor != "Black" || "Blonde" || "Brown" || "Red" || "White" || "Bald" || "None");
+                                while (charAppear.hairColor != "Black" || charAppear.hairColor != "Blonde" || charAppear.hairColor != "Brown" || charAppear.hairColor != "Red" || charAppear.hairColor != "White" || charAppear.hairColor != "Bald" || charAppear.hairColor != "None") ;
                                 narraText.textStore(21);
-                                charAppear.Armor = Console.ReadLine().ToUpper;
+                                charAppear.armor = Console.ReadLine().ToUpper();
                                 do
                                 {
-                                    switch(charAppear.armor)
+                                    switch (charAppear.armor)
                                     {
                                         case "LEATHER":
                                             {
@@ -290,41 +290,37 @@ namespace TextAdv
                                                 charAppear.armor = "Metal Suit";
                                                 //charAppear.armorStrength = TBD;
                                                 //charAppear.armorWeight = TBD;
+                                                break;
                                             }
                                         case "SUIT OF ARMOR":
                                             {
                                                 charAppear.armor = "Metal Suit";
                                                 //charAppear.armorStrength = TBD;
                                                 //charAppear.armorWeight = TBD;
+                                                break;
                                             }
                                         case "METAL":
                                             {
                                                 charAppear.armor = "Metal Suit";
                                                 //charAppear.armorStrength = TBD;
                                                 //charAppear.armorWeight = TBD;
+                                                break;
                                             }
                                         case "SUIT":
                                             {
                                                 charAppear.armor = "Metal Suit";
                                                 //charAppear.armorStrength = TBD;
                                                 //charAppear.armorWeight = TBD;
+                                                break; 
                                             }
-                                    }
-                                }
 
-                               Console.WriteLine("Picked Attributes: /n{0}/n{1}/{2}/n{3}/n", charAppear.gender, charAppear.hairColor, charAppear.armor);
+                                    }//end of armor switch
 
 
-                            }
+                                    break;//game loop break
+                                } while (loopChk == "Y");
 
-                                break;
-
-                        }//----------------------> End Game Loop
-                    } while (loopChk == "Y") ;
-                    Console.WriteLine("\n");
-                }
-
-
+                                Console.WriteLine("\n");
                 
 			else if(menuOptChk == "2"){
 				Console.WriteLine("Well... I don't know how to say this... but we don't have a save function yet...");
