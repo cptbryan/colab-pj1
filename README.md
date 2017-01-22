@@ -10,7 +10,7 @@
 
 
 ### This is our little collaboration project.
-  Fundamentally, the project is a means to improve our programming skills through the excercise.
+  Fundamentally, the project is a means to improve our programming skills through excercise.
 
 
 #### What is it?  
