@@ -63,17 +63,16 @@ public class charAtts
                         startClass = value;
                     }
             }
-    public string startWeapon
-    {
-        get
-        {
-            return startWeapon;
-        }
-        set
-        {
-            startWeapon = value;
-        }
-    }
+   //  public string startWeapon
+   //  {
+   //      get
+   //      {
+   //          return startWeapon;
+   //      }
+   //      set
+   //      {
+   //          startWeapon = value;
+   //      }
+   //  }
 
 }
-
