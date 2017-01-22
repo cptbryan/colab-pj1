@@ -69,7 +69,7 @@ _~Enter Text Below~_
 
 
 
-
+<br><br><br>
 ###Previous Text--Not currently relevant
 ~~This is where we will compile an overview of the project. We will work together to define the scope and our general ideas.
 
