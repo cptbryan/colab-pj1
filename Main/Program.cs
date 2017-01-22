@@ -314,8 +314,37 @@ namespace TextAdv
                                                 break; 
                                             }
 
-                                    }//end of armor switch
+                                    }//end of armor switch------------------>
+                                    narraText.textStore(21);
+                                    charAppear.startClass = Console.ReadLine().ToUpper();
+                        do//startClass do while and switch start --------------->
+                          {
+                            switch(charAppear.startClass);/*The data stored in the armor switch, class switch, and weapon switch needs
+                                        to be migrated from the charAppear object to a "TBD" object.*/
+                                        {
+                                            case "KNIGHT":
+                                            {
+                                                charAppear.startClass = "Knight";
+                                                charAppear.startWeapon = "Sword";
+                                                //charAppear.startWeapon = "Rusty Bronze Sword";
 
+                                            }
+                                            case "ARCHER":
+                                            {
+                                                charAppear.startClass = "Archer";
+                                                charAppear.startWeapon = "Bow";
+                                                //charAppear.startWeapon = "Cheap Pine Bow";
+                                            }
+                                            case "MAGE":
+                                            {
+                                                charAppear.startClass = "Mage";
+                                                charAppear.startWeapon = "Basic Spell";
+                                                //charAppear.startWeapon = "Fury of the Grass";
+                                            }
+
+                                        }
+                            
+                          }
 
                                     break;//game loop break
                                 } while (loopChk == "Y");

@@ -35,7 +35,9 @@ namespace TextAdv{
             narration.Add("Are you a male or a female? (One or the other, this isn't California.)");//19
             narration.Add("What color is your hair?");//20
             narration.Add("What is your preferred armor? Leather, Chainmail, Metal Suit?");//21
+            narration.Add("Let's talk classes. Are you a brave knight? A sharp-eyed archer? Or a wise mage?");//22
 
+         
 
 
             
