@@ -44,9 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="charAtts.cs" />
-    <Compile Include="Narrartion.cs" />
+    <Compile Include="outTxt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="weaponAtts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
