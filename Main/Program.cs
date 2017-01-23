@@ -26,7 +26,7 @@ namespace TextAdv
 
 			string loopChk;
 			string usrInputA;
-			string usrInputB;
+			//string usrInputB; unused in current build
 			string menuOptChk;
             
 
@@ -41,16 +41,17 @@ namespace TextAdv
 				System.Threading.Thread.Sleep(100);
 			}
 			Console.WriteLine("\n");
+            
 
 			//var instance = new narration();
 			// Here is the block of the text, nice and clean compared to what it would be without the function.
 			// FYI, The objects being passed into the function, were originally variables.
 			// I wanted to test out using list attributes in place of varibles...
 			// Doesn't really save much code, but I don't have to think up unique variable names for all of the items.
-			narraText.introScrawl(narraText.textStore(0));
+			/*narraText.introScrawl(narraText.textStore(0));
 			narraText.introScrawl(narraText.textStore(1));
 			narraText.introScrawl(narraText.textStore(2));
-			narraText.introScrawl(narraText.textStore(3));
+			narraText.introScrawl(narraText.textStore(3));*/
 
 			for(int i=0; i<21; i++){
 				Console.Write("[][]");
@@ -79,7 +80,7 @@ Everything prior to this is superfluous to the game loop, and is really just for
                     // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
                     if (loopChk == "Y")
                     {
-                        narraText.introScrawl(narraText.textStore(9));
+                        /*narraText.introScrawl(narraText.textStore(9));
                         narraText.introScrawl(narraText.textStore(10));
                         narraText.introScrawl(narraText.textStore(11));
                         narraText.introScrawl(narraText.textStore(12));
@@ -90,7 +91,7 @@ Everything prior to this is superfluous to the game loop, and is really just for
                         usrName = Console.ReadLine();
                         narraText.introScrawl(narraText.textStore(16));
                         narraText.introScrawl(narraText.textStore(17));
-                        narraText.introScrawl(narraText.textStore(18));
+                        narraText.introScrawl(narraText.textStore(18));*/
                         usrInputA = Console.ReadLine().ToUpper();
 
                         if (usrInputA == "N")
@@ -107,159 +108,24 @@ Everything prior to this is superfluous to the game loop, and is really just for
                         narraText.introScrawl(narraText.textStore(19));
 
                         //Begin Character Creation
-
+                        charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
                         //Gender Select
                         narraText.introScrawl(narraText.textStore(20));
                         narraText.introScrawl(narraText.textStore(21));
-                        charAtts charAppear = new charAtts();// First instantiation of the charAtts class. -EB
-                        do
-                        {// to keep the main program file cleaner and not clutter it with variable declarations and such.
-                            charAppear.gender = Console.ReadLine().ToUpper();
-
-                            switch (charAppear.gender)//changed this block of code from else if  to switch to clean up code-------------------------------->
-                            {
-                                case "1":
-                                    {
-                                        charAppear.gender = "Male";
-                                        break;
-                                    }
-                                case "2":
-                                    {
-                                        charAppear.gender = "Female";
-                                        break;
-                                    }
-                                default:
-                                    {
-                                        narraText.introScrawl(narraText.textStore(22));
-                                        break;
-                                    }
-                            }
-                        } while (charAppear.gender == "");
-
-                        // Hair Color Select
+                        charAppear.gen(Console.ReadLine().ToUpper());
+                        //Hair Color Select
                         narraText.introScrawl(narraText.textStore(23));
-                        charAppear.hairColor = Console.ReadLine().ToUpper();
-                        do
-                        {
-                            switch (charAppear.hairColor)
-                            {
-                                case "1":
-                                    {
-                                        charAppear.hairColor = "Black";
-                                        break;
-                                    }
-                                case "2":
-                                    {
-                                        charAppear.hairColor = "Blonde";
-                                        break;
-                                    }
-                                case "3":
-                                    {
-                                        charAppear.hairColor = "Brown";
-                                        break;
-                                    }
-                                case "4":
-                                    {
-                                        charAppear.hairColor = "Red";
-                                        break;
-                                    }
-                                case "5":
-                                    {
-                                        charAppear.hairColor = "White";
-                                        break;
-                                    }
-                                default:
-                                    {
-                                        narraText.introScrawl(narraText.textStore(24));
-                                        break;
-                                    }
-                                }
-                            }while (charAppear.hairColor == "");
-                            
-                            //Class Selection
-                         	narraText.textStore(25);
-                         	charAppear.startClass = Console.ReadLine().ToUpper();
-                        do//startClass do while and switch start --------------->
-                         	{
-                         	switch(charAppear.startClass)/*The data stored in the armor switch, class switch, and weapon switch needs
-                         	            to be migrated from the charAppear object to a "TBD" object.*/
-                         	            {
-                         	                case "1":
-                         	                {
-                         	                    charAppear.startClass = "Knight";
-                         	                    //charAppear.startWeapon = "Sword";
-                         	                    //charAppear.startWeapon = "Rusty Bronze Sword";
-                         	                    break;
-
-                         	                }
-                         	                case "2":
-                         	                {
-                         	                    charAppear.startClass = "Archer";
-                         	                    //charAppear.startWeapon = "Bow";
-                         	                    //charAppear.startWeapon = "Cheap Pine Bow";
-                         	                    break;
-                         	                }
-                         	                case "3":
-                         	                {
-                         	                    charAppear.startClass = "Mage";
-                         	                    //charAppear.startWeapon = "Basic Spell";
-                         	                    //charAppear.startWeapon = "Fury of the Grass";
-                         	                    break;
-                         	                }
-                         	                default:
-                         	                {
-                                                narraText.introScrawl(narraText.textStore(26));
-                         	                    break;
-                         	                }
-
-                         	            }
-
-                         	}while(charAppear.startClass == "");
-
-                        //Clothing
+                        charAppear.hc(Console.ReadLine().ToUpper());
+                        //Class Selection
+                        /*narraText.textStore(25);
+                        charAppear.startingClass(Console.ReadLine().ToUpper());
+                        //Clothing and Armor Selection
                         narraText.textStore(27);
-                        charAppear.Armor = Console.ReadLine().ToUpper();
-                        do
-                        {
-                            switch (charAppear.startClass)/*The data stored in the armor switch, class switch, and weapon switch needs
-                         	                to be migrated from the charAppear object to a "TBD" object.*/
-                            {
-                                case "1":
-                                    {
-                                        charAppear.Armor = "Plate Armor";
-                                        //charAppear.startWeapon = "Sword";
-                                        //charAppear.startWeapon = "Rusty Bronze Sword";
-                                        break;
-
-                                    }
-                                case "2":
-                                    {
-                                        charAppear.Armor = "Leather";
-                                        //charAppear.startWeapon = "Bow";
-                                        //charAppear.startWeapon = "Cheap Pine Bow";
-                                        break;
-                                    }
-                                case "3":
-                                    {
-                                        charAppear.Armor = "Robe";
-                                        //charAppear.startWeapon = "Basic Spell";
-                                        //charAppear.startWeapon = "Fury of the Grass";
-                                        break;
-                                    }
-                                default:
-                                    {
-                                        narraText.introScrawl(narraText.textStore(28));
-                                        break;
-                                    }
-
-                            }
-
-                        } while (charAppear.Armor == "");
-
-
+                        charAppear.tempArmor(Console.ReadLine().ToUpper());*/
                         //End of current switches
-                        Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor + "\nYou're a " + charAppear.startClass + "\nAnd you prefer to wear " + charAppear.Armor + "s");
+                        Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor);
                         Console.WriteLine("Correct?");
+                        Console.ReadLine();
 
                         break;//Here is where the game loop breaks currently. After save states and...everything else is implemented, we will change this
                         }
