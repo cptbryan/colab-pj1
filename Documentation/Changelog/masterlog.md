@@ -46,3 +46,6 @@ Went through and fixed some bugs and syntatical errors. Plan is to add weapon se
 ###1/22/2017
   Restored the code to a functional form. Modifyied the Readme portion of our project. Restructured the **masterlog** to
  represent the visual design that I think would improve readability. 
+ 
+ ###1/23/2017
+  Debugged some of the switches. _-EB_
