@@ -7,7 +7,7 @@ namespace TextAdv
 {
 	class advMain
 	{
-        public static string usrName = "";
+        
 
         public static void Main(string [] args){
 
@@ -32,13 +32,11 @@ namespace TextAdv
 
             // There is likely a better way to handle the narration, but this is the best I have atm
 
-
-
             // I don't plan on reusing this code much, so copy and paste will suffice for me.
 
             for (int i=0; i<21; i++){
 				Console.Write("[][]");
-				System.Threading.Thread.Sleep(100);
+				//System.Threading.Thread.Sleep(100);
 			}
 			Console.WriteLine("\n");
 
@@ -53,7 +51,7 @@ namespace TextAdv
 
 			for(int i=0; i<21; i++){
 				Console.Write("[][]");
-				System.Threading.Thread.Sleep(100);
+				//System.Threading.Thread.Sleep(100);
 			}
 			Console.WriteLine("\n");
 
@@ -63,63 +61,54 @@ namespace TextAdv
         	menuOptChk = Console.ReadLine();
 
 
-            if(menuOptChk == "1") {
-                /* Here begins the "all powerfull" main loop... otherwise known as the "Game Loop".
-Everything prior to this is superfluous to the game loop, and is really just for flavor.
-*/
-
-                do//start game loop -------------------------------------->
+            if (menuOptChk == "1")//start game loop -------------------------------------->
+            {
+                do
                 {
-                   narraText.introScrawl(narraText.textStore(8));
-                   loopChk = Console.ReadLine().ToUpper();
-
+                    narraText.introScrawl(narraText.textStore(3));
+                    loopChk = Console.ReadLine().ToUpper();
                     // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
-                    if (loopChk == "Y")
+                    switch (loopChk)
                     {
-                        narraText.introScrawl(narraText.textStore(4));
-
-                        narraText.introScrawl(narraText.textStore(5));
-                        usrName = Console.ReadLine();
-                        narraText.introScrawl(narraText.textStore(6));
-
-                        usrInputA = Console.ReadLine().ToUpper();
-                        narraText.introScrawl(narraText.textStore(7));
-
-                        if (usrInputA == "N")
-                        {
-
-                            while (usrInputA == "N")
+                        case "Y":
                             {
-                                narraText.introScrawl(narraText.textStore(15));
-                                usrName = Console.ReadLine();
-                                narraText.introScrawl(narraText.textStore(18));
-                                usrInputA = Console.ReadLine().ToUpper();
+                                narraText.introScrawl(narraText.textStore(4));
+                                narraText.introScrawl(narraText.textStore(5));
+                                narraText.usrName = Console.ReadLine();
+                                narraText.introScrawl(narraText.textStore(6));
+                                //usrInputA = Console.ReadLine().ToUpper();
+                                narraText.introScrawl(narraText.textStore(7));
+                                break;
                             }
-                        }
-                        narraText.introScrawl(narraText.textStore(19));
+                        case "N":
+                            {
+                                narraText.introScrawl(narraText.textStore(1));
+                                Console.ReadKey();
+                                System.Environment.Exit(1);//exits program
+                                break;  
+                            }
+                    }
+                    
+                    //Begin Character Creation
+                    charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
+                    //Gender Select
+                    narraText.introScrawl(narraText.textStore(8));
+                    charAppear.gen(Console.ReadLine().ToUpper());
+                    //Hair Color Select
+                    narraText.introScrawl(narraText.textStore(23));
+                    charAppear.hc(Console.ReadLine().ToUpper());
+                    //Class Selection
+                    /*narraText.textStore(25);
+                    charAppear.startingClass(Console.ReadLine().ToUpper());
+                    //Clothing and Armor Selection
+                    narraText.textStore(27);
+                    charAppear.tempArmor(Console.ReadLine().ToUpper());*/
+                    //End of current switches
+                    Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + narraText.usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor);
+                    Console.WriteLine("Correct?");
+                    Console.ReadLine();
 
-                        //Begin Character Creation
-                        charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
-                        //Gender Select
-                        narraText.introScrawl(narraText.textStore(20));
-                        narraText.introScrawl(narraText.textStore(21));
-                        charAppear.gen(Console.ReadLine().ToUpper());
-                        //Hair Color Select
-                        narraText.introScrawl(narraText.textStore(23));
-                        charAppear.hc(Console.ReadLine().ToUpper());
-                        //Class Selection
-                        /*narraText.textStore(25);
-                        charAppear.startingClass(Console.ReadLine().ToUpper());
-                        //Clothing and Armor Selection
-                        narraText.textStore(27);
-                        charAppear.tempArmor(Console.ReadLine().ToUpper());*/
-                        //End of current switches
-                        Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor);
-                        Console.WriteLine("Correct?");
-                        Console.ReadLine();
-
-                        break;//Here is where the game loop breaks currently. After save states and...everything else is implemented, we will change this
-                        }
+                    break;//Here is where the game loop breaks currently. After save states and...everything else is implemented, we will change this
                  }while (loopChk == "Y");
                  narraText.introScrawl(narraText.textStore(29));
 
@@ -161,4 +150,5 @@ Everything prior to this is superfluous to the game loop, and is really just for
 			}
 		}
 	}
-}
+ }
+
