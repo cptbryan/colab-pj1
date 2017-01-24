@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="armor.cs" />
     <Compile Include="charAtts.cs" />
     <Compile Include="outTxt.cs" />
     <Compile Include="Program.cs" />
