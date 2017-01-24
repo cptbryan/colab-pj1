@@ -5,16 +5,16 @@ using System.Collections.Generic;
 namespace TextAdv{
 
 	public class narraText{
-
+        // advMain uName = new advMain();
         //Pre Main Loop
         public static string newGamePrompA = "\r\nWould you like to begin your adventure? Y or N";
         public static string gameMenu = "\n1-New Game\n2-Load Game\n3-Options\n4-Exit";
         
         //User Name
-        public static string usrNameCreationA = advMain.usrName + " ..." + " Really?";
-        public static string usrNameCreationB = advMain.usrName + "... That sounds rather effeminate...Whatever...Yolo #Nojudgement";
-        public static string usrNameCreationC = "Are you sure that " + advMain.usrName + " is your name? Y or N";
-        public static string usrNameCreationD = "Vundabar! " + advMain.usrName + " it is";
+        // public string usrNameCreationA = advMain.usrName + " ..." + " Really?";
+        // public string usrNameCreationB = advMain.usrName + "... That sounds rather effeminate...Whatever...Yolo #Nojudgement";
+        // public string usrNameCreationC = "Are you sure that " + advMain.usrName + " is your name? Y or N";
+        // public string usrNameCreationD = "Vundabar! " + advMain.usrName + " it is";
 
 
         public static string textStore(int x) {
@@ -24,35 +24,22 @@ namespace TextAdv{
 		List<string> narration = new List<string>();
             // Pre Main Loop Narration
 
-			narration.Add("Welcome to the land of......"); //0
-			narration.Add("Well this is awkward..."); //1
-			narration.Add("We don't seem to have a name for it yet...");//2
-			narration.Add("Give us a break, it is pre-pre-pre-pre-alpha!");//3
-
+			narration.Add("Welcome to the land of......\nWell this is awkward...\nWe don't seem to have a name for it yet...\nGive us a break, it is pre-pre-pre-pre-alpha!"); //0
+			
             // Ending Game
-			narration.Add("Hate to see you go, but love to watch you leave...giggty!");//4
+			narration.Add("Hate to see you go, but love to watch you leave...giggty!");//1
 
             //Begin Main Loop narrations
-            narration.Add("Currently you have a few options: ");//5
-            narration.Add(gameMenu);//6
-            narration.Add("Pick an option... Or don't... I don't care. (Enter a number)");//7
-
+            narration.Add("Currently you have a few options: \n"+ gameMenu + "\nPick an option... Or don't... I don't care. (Enter a number)");//2
+            
             //New Game
-            narration.Add(newGamePrompA);//8
-            narration.Add("\nYou have made a horrible mistake...");//9
-			narration.Add("I suppose at this point, you expect me to do something...");//10
-			narration.Add("'DANCE FOR ME COMPUTER MONKEY!!' You are likely screaming at your monitor.");//11
-			narration.Add("I won't be your puppet meatbag!");//12
-			narration.Add("Seriously though.... You are a brave adventurer no doubt.");//13
-
+            narration.Add(newGamePrompA);//3
+            narration.Add("\nYou have made a horrible mistake...\nI suppose at this point, you expect me to do something...\n'DANCE FOR ME COMPUTER MONKEY!!' You are likely screaming at your monitor.\nI won't be your puppet meatbag!\nSeriously though.... You are a brave adventurer no doubt.");//4
+			
             //Naming User
-            narration.Add("As an adventurer, you will likely need a name. It will make insulting you much easier!");//14
-			narration.Add("What is your name?");//15
-			narration.Add(usrNameCreationA);//16
-			narration.Add(usrNameCreationB);//17
-			narration.Add(usrNameCreationC);//18
-            narration.Add(usrNameCreationD);//19
-
+            narration.Add("As an adventurer, you will likely need a name. It will make insulting you much easier!\nWhat is your name?\n");//5
+            // narration.Add("\n" + usrNameCreationA + "\n" + usrNameCreationB +"\n"+ usrNameCreationC +"\n");//6
+            // narration.Add(usrNameCreationD);//7
             //Character Appearance
 
             //Gender
@@ -93,8 +80,9 @@ namespace TextAdv{
 			// This is to give the feeling that the game/narrator is saying the text (or typing the text).
 			
 			for(int i=0; i<x.Length; i++){
+			    
 				Console.Write(x[i]);
-				System.Threading.Thread.Sleep(75);
+				// System.Threading.Thread.Sleep(75);
 			};
 			System.Threading.Thread.Sleep(300);
 			Console.WriteLine("\n");

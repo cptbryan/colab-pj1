@@ -48,10 +48,8 @@ namespace TextAdv
 			// FYI, The objects being passed into the function, were originally variables.
 			// I wanted to test out using list attributes in place of varibles...
 			// Doesn't really save much code, but I don't have to think up unique variable names for all of the items.
-			/*narraText.introScrawl(narraText.textStore(0));
-			narraText.introScrawl(narraText.textStore(1));
-			narraText.introScrawl(narraText.textStore(2));
-			narraText.introScrawl(narraText.textStore(3));*/
+			narraText.introScrawl(narraText.textStore(0));
+			
 
 			for(int i=0; i<21; i++){
 				Console.Write("[][]");
@@ -61,10 +59,8 @@ namespace TextAdv
 
 
 
-			narraText.introScrawl(narraText.textStore(5));
-            narraText.introScrawl(narraText.textStore(6));
-            narraText.introScrawl(narraText.textStore(7));
-			menuOptChk = Console.ReadLine();
+			narraText.introScrawl(narraText.textStore(2));
+        	menuOptChk = Console.ReadLine();
 
 
             if(menuOptChk == "1") {
@@ -80,19 +76,14 @@ Everything prior to this is superfluous to the game loop, and is really just for
                     // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
                     if (loopChk == "Y")
                     {
-                        /*narraText.introScrawl(narraText.textStore(9));
-                        narraText.introScrawl(narraText.textStore(10));
-                        narraText.introScrawl(narraText.textStore(11));
-                        narraText.introScrawl(narraText.textStore(12));
-                        narraText.introScrawl(narraText.textStore(13));
-
-                        narraText.introScrawl(narraText.textStore(14));
-                        narraText.introScrawl(narraText.textStore(15));
+                        narraText.introScrawl(narraText.textStore(4));
+                        
+                        narraText.introScrawl(narraText.textStore(5));
                         usrName = Console.ReadLine();
-                        narraText.introScrawl(narraText.textStore(16));
-                        narraText.introScrawl(narraText.textStore(17));
-                        narraText.introScrawl(narraText.textStore(18));*/
+                        narraText.introScrawl(narraText.textStore(6));
+                        
                         usrInputA = Console.ReadLine().ToUpper();
+                        narraText.introScrawl(narraText.textStore(7));
 
                         if (usrInputA == "N")
                         {
