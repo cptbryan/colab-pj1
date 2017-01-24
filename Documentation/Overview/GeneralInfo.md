@@ -26,23 +26,23 @@ The Text Parsing(_Parser_) is one of the most commonly interacted with element o
 <h4>List of Action Item by Priority:</h4>
 ######_The below list is not finale_
 <ol>
-	<li>Main Loop</li>
-	<li>Program Output</li>
-		<ol>
-			<li>Storing Text</li>
-			<li>Outputting Text to User</li>
+<li>Main Loop</li>
+<li>Program Output</li>
+	<ol>
+		<li>Storing Text</li>
+		<li>Outputting Text to User</li>
 			<ul>
 				<li>Outputting Variables</li>
 				<li>Controlling Output Speed</li>
 			</ul>
-			<li>Styling</li>
+		<li>Styling</li>
 			<ul>
 				<li>Text Formating</li>
 				<li>Text Background</li>
 				<li>Text Font</li>
 			</ul>
-	
-		</ol>
+	</ol>
+</ol>
 	<li>Handling user input</li>
 	<li>Room system.</li>
 	<li>Movement system.</li>
