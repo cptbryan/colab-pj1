@@ -42,7 +42,7 @@ The Text Parsing(_Parser_) is one of the most commonly interacted with element o
 				<li>Text Font</li>
 			</ul>
 	</ol>
-</ol>
+
 	<li>Handling user input</li>
 	<li>Room system.</li>
 	<li>Movement system.</li>
