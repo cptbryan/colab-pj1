@@ -8,3 +8,6 @@ C:\Projects\colab-pj1\VS Solution\bin\Debug\colab-pj1.pdb
 C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.csprojResolveAssemblyReference.cache
 C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
 C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
+C:\Programs\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.config
+C:\Programs\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
+C:\Programs\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
