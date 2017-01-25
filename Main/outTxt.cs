@@ -25,19 +25,24 @@ namespace TextAdv{
 		List<string> narration = new List<string>();
             // Pre Main Loop Narration
 			narration.Add("Welcome to the land of......\nWell this is awkward...\nWe don't seem to have a name for it yet...\nGive us a break, it is pre-pre-pre-pre-alpha!"); //0
+			
             // Ending Game
 			narration.Add("Hate to see you go, but love to watch you leave...giggty!");//1
+			
             //Begin Main Loop narrations
             narration.Add("Currently you have a few options: \n"+ gameMenu + "\nPick an option... Or don't... I don't care. (Enter a number)");//2
             //New Game
             narration.Add(newGamePrompA);//3
             narration.Add("\nYou have made a horrible mistake...\nI suppose at this point, you expect me to do something...\n'DANCE FOR ME COMPUTER MONKEY!!,' you are likely screaming at your monitor.\nI won't be your puppet, meatbag!\nSeriously though.... You are a brave adventurer no doubt.");//4
+            
             //Naming User
             narration.Add("As an adventurer, you will likely need a name. It will make insulting you much easier!\nWhat is your name?\n");//5
-            narration.Add("\n" + usrNameCreationA + "\n" + usrNameCreationB +"\n"+ usrNameCreationC +"\n");//6
-            narration.Add(usrNameCreationD);//7
+            narration.Add("removed vars");//6 "\n" + usrNameCreationA + "\n" + usrNameCreationB +"\n"+ usrNameCreationC +"\n"
+            narration.Add("removed var");//7usrNameCreationD
             //Character Appearance
+            
             //TBD
+            
             //Gender
             narration.Add("Well, now that we know your name, it's time to decide what you look like./n First, are you a Male or a Female ? \n1: Male\n2: Female");//8
             //Hair Color
