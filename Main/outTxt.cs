@@ -6,16 +6,17 @@ namespace TextAdv{
 
 	public class narraText{
         //Variable Declarations
-        public static string usrName; 
+        advMain uN = new advMain();
+         
         //Pre Main Loop
         public static string newGamePrompA = "\r\nWould you like to begin your adventure? Y or N";
         public static string gameMenu = "\n1-New Game\n2-Load Game\n3-Options\n4-Exit";
 
         //User Name
-        public static string usrNameCreationA = usrName + " ..." + " Really?";
-        public static string usrNameCreationB = usrName + " ... That sounds rather effeminate... Whatever... Yolo #Nojudgement";
-        public static string usrNameCreationC = "Are you sure that " + usrName + " is your name? Y or N";
-        public static string usrNameCreationD = "Vundabar! " + usrName + " it is.";
+        public static string usrNameCreationA = advMain.uN + " ..." + " Really?";
+        public static string usrNameCreationB = advMain.uN + " ... That sounds rather effeminate... Whatever... Yolo #Nojudgement";
+        public static string usrNameCreationC = "Are you sure that " + advMain.uN + " is your name? Y or N";
+        public static string usrNameCreationD = "Vundabar! " + advMain.uN + " it is.";
 
 
         public static string textStore(int x) {
@@ -37,8 +38,8 @@ namespace TextAdv{
             
             //Naming User
             narration.Add("As an adventurer, you will likely need a name. It will make insulting you much easier!\nWhat is your name?\n");//5
-            narration.Add("removed vars");//6 "\n" + usrNameCreationA + "\n" + usrNameCreationB +"\n"+ usrNameCreationC +"\n"
-            narration.Add("removed var");//7usrNameCreationD
+            narration.Add("\n" + usrNameCreationA + "\n" + usrNameCreationB +"\n"+ usrNameCreationC +"\n");//6 
+            narration.Add(usrNameCreationD);//7
             //Character Appearance
             
             //TBD
@@ -49,14 +50,14 @@ namespace TextAdv{
             narration.Add("What color is your hair? \n1-Black\n2-Brown\n3-Blonde\n4-Red\n5-White");//9
             narration.Add("So, are you too inept to know what your hair color is? Let's try again.");//10 Hair Color Fail State
             //Class - This will also be revisited.
-            narration.Add("Let's talk classes. Not that you personally have any.... Your options are: \n-1brave knight\n-2A sharp-eyed archer\n-3Or a wise mage?\n We both know your class should be loser :D");//25
-            narration.Add("Ah... Loser it is... Who would have known my prophetic nature would reveal itself here.");//26
+            narration.Add("Let's talk classes. Not that you personally have any.... Your options are: \n-1brave knight\n-2A sharp-eyed archer\n-3Or a wise mage?\n We both know your class should be loser :D");//11
+            narration.Add("Ah... Loser it is... Who would have known my prophetic nature would reveal itself here.");//12
             //Clothing - This will be changed once we define the Character Appearance structure.
-            narration.Add("What is your preferred armor? \n1-Plate Armor, \n2-Leather, \n-3Robe? Chiffon gown?");//27
-            //narration.Add("A Chiffon gown you say? You know that it is sheer right? Sicko!");//28
-            narration.Add("Enough adventuring for you... GET OUT OF MY HOUSE!");//14
+            narration.Add("What is your preferred armor? \n1-Plate Armor, \n2-Leather, \n-3Robe? Chiffon gown?");//13
+            //narration.Add("A Chiffon gown you say? You know that it is sheer right? Sicko!");//14
+            narration.Add("Enough adventuring for you... GET OUT OF MY HOUSE!");//15
             //Generic Fail Statement
-            narration.Add("So... We appear to be at an impasse... It isn't difficult.. Just enter 1 or 2.");//?
+            narration.Add("So... We appear to be at an impasse... It isn't difficult.. Just enter 1 or 2.");//16
             return narration[x];
             /*
             We can store ideas here:

@@ -7,11 +7,11 @@ namespace TextAdv
 {
 	class advMain
 	{
-        
+        public string usrName;
 
         public static void Main(string [] args){
 
-
+			
 			// So obviously what we are wanting to do is create a quirky and fun little game.
 
 			/*
@@ -95,13 +95,13 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(8));
                     charAppear.gen(Console.ReadLine().ToUpper());
                     //Hair Color Select
-                    narraText.introScrawl(narraText.textStore(23));
+                    narraText.introScrawl(narraText.textStore(9));
                     charAppear.hc(Console.ReadLine().ToUpper());
                     //Class Selection
-                    /*narraText.textStore(25);
+                    /*narraText.introScrawl(narraText.textStore(11));
                     charAppear.startingClass(Console.ReadLine().ToUpper());
                     //Clothing and Armor Selection
-                    narraText.textStore(27);
+                    narraText.introScrawl(narraText.textStore(12));
                     charAppear.tempArmor(Console.ReadLine().ToUpper());*/
                     //End of current switches
                     Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + narraText.usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor);
