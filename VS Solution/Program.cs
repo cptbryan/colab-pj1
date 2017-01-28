@@ -66,26 +66,31 @@ namespace TextAdv
                                        
                 // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
                 narraText.introScrawl(narraText.textStore(2));
-                narraText.introScrawl(narraText.textStore(3));
+                //Assigning the return value of asnUsrName method to usrName. Might not be necessary, so keep that in mind. 
                 string usrName = HumanEntity.asnUsrName();
                                      
                 //Begin Character Creation //Character Creation will be moved to Human Entity.cs
                 charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
+
                 //Gender Select 
                 narraText.introScrawl(narraText.textStore(4));
                 charAppear.gen(Console.ReadLine().ToUpper());
+
                 //Hair Color Select
                 narraText.introScrawl(narraText.textStore(5));
                 charAppear.hc(Console.ReadLine().ToUpper());
+
                 //Class Selection
                 armor sClass = new armor();
                 narraText.textStore(7);
                 sClass.startingClass(Console.ReadLine().ToUpper());
+
                 //Clothing and Armor Selection
                 narraText.textStore(9);
                 sClass.tempArmor(Console.ReadLine().ToUpper());
+
                 //End of current switches
-                
+                // Detailing the users choices.
                 Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + usrName + "\nYou are some kind of " + sClass.startClass + " adventurer" + "\nYour hair color is " + charAppear.hairColor + " and you prefer the comfort of " + sClass.startArmor);
                 Console.WriteLine("Correct?");
                 Console.ReadLine();
