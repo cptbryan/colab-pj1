@@ -68,7 +68,8 @@ namespace TextAdv
                         }
                     default:
                         {
-                            narraText.introScrawl(narraText.textStore(26));
+                            narraText.introScrawl(narraText.textStore(8));
+                            startClass = "Loser";
                             break;
                         }
 
@@ -100,14 +101,15 @@ namespace TextAdv
                         }
                     case "3":
                         {
-                            startArmor = "Robe";
+                            startArmor = "Robes";
                             //charAppear.startWeapon = "Basic Spell";
                             //charAppear.startWeapon = "Fury of the Grass";
                             break;
                         }
                     default:
                         {
-                            narraText.introScrawl(narraText.textStore(28));
+                            narraText.introScrawl(narraText.textStore(10));
+                            startArmor = "Chiffon gown";
                             break;
                         }
 

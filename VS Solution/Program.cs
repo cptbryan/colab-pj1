@@ -25,7 +25,7 @@ namespace TextAdv
 			// For the sake of expediency... I decided to write out a very basic block of code to give an idea of what that might look like.
 
 			string loopChk;
-			string usrInputA;
+			
 			//string usrInputB; unused in current build
 			string menuOptChk;
 
@@ -57,69 +57,55 @@ namespace TextAdv
 
 
 
-			narraText.introScrawl(narraText.textStore(2));
+			narraText.introScrawl(narraText.textStore(1));
         	menuOptChk = Console.ReadLine();
 
 
             if (menuOptChk == "1")//start game loop -------------------------------------->
             {
-                do
-                {
-                    narraText.introScrawl(narraText.textStore(3));
-                    loopChk = Console.ReadLine().ToUpper();
-                    // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
-                    switch (loopChk)
-                    {
-                        case "Y":
-                            {
-                                narraText.introScrawl(narraText.textStore(4));
-                                narraText.introScrawl(narraText.textStore(5));
-                                narraText.usrName = Console.ReadLine();
-                                narraText.introScrawl(narraText.textStore(6));
-                                //usrInputA = Console.ReadLine().ToUpper();
-                                narraText.introScrawl(narraText.textStore(7));
-                                break;
-                            }
-                        case "N":
-                            {
-                                narraText.introScrawl(narraText.textStore(1));
-                                Console.ReadKey();
-                                System.Environment.Exit(1);//exits program
-                                break;  
-                            }
-                    }
-                    
-                    //Begin Character Creation
-                    charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
-                    //Gender Select
-                    narraText.introScrawl(narraText.textStore(8));
-                    charAppear.gen(Console.ReadLine().ToUpper());
-                    //Hair Color Select
-                    narraText.introScrawl(narraText.textStore(23));
-                    charAppear.hc(Console.ReadLine().ToUpper());
-                    //Class Selection
-                    /*narraText.textStore(25);
-                    charAppear.startingClass(Console.ReadLine().ToUpper());
-                    //Clothing and Armor Selection
-                    narraText.textStore(27);
-                    charAppear.tempArmor(Console.ReadLine().ToUpper());*/
-                    //End of current switches
-                    Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + narraText.usrName + "\nYou are a " + charAppear.gender + " adventurer" + "\nYour hair color is " + charAppear.hairColor);
-                    Console.WriteLine("Correct?");
-                    Console.ReadLine();
+                                       
+                // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
+                narraText.introScrawl(narraText.textStore(2));
+                narraText.introScrawl(narraText.textStore(3));
+                string usrName = HumanEntity.asnUsrName();
+                                     
+                //Begin Character Creation //Character Creation will be moved to Human Entity.cs
+                charAtts charAppear = new charAtts();// First instantiation of the charAtts class.
+                //Gender Select 
+                narraText.introScrawl(narraText.textStore(4));
+                charAppear.gen(Console.ReadLine().ToUpper());
+                //Hair Color Select
+                narraText.introScrawl(narraText.textStore(5));
+                charAppear.hc(Console.ReadLine().ToUpper());
+                //Class Selection
+                armor sClass = new armor();
+                narraText.textStore(7);
+                sClass.startingClass(Console.ReadLine().ToUpper());
+                //Clothing and Armor Selection
+                narraText.textStore(9);
+                sClass.tempArmor(Console.ReadLine().ToUpper());
+                //End of current switches
+                
+                Console.WriteLine("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is " + usrName + "\nYou are some kind of " + sClass.startClass + " adventurer" + "\nYour hair color is " + charAppear.hairColor + " and you prefer the comfort of " + sClass.startArmor);
+                Console.WriteLine("Correct?");
+                Console.ReadLine();
 
-                    break;//Here is where the game loop breaks currently. After save states and...everything else is implemented, we will change this
-                 }while (loopChk == "Y");
-                 narraText.introScrawl(narraText.textStore(29));
+                   //Here is where the game loop breaks currently. After save states and...everything else is implemented, we will change this
+                 
+                    narraText.introScrawl(narraText.textStore(11));
 
 
             }
             else if (menuOptChk == "2"){
 				Console.WriteLine("Well... I don't know how to say this... but we don't have a save function yet... You've lost nothing... or everything...");
-			}
+                Console.ReadKey();
+                System.Environment.Exit(1);
+            }
 			else if(menuOptChk == "3"){
 				Console.WriteLine("Your options consist of: 'Firmly place your head between your legs and kiss your buttocks goodbye.' or 'Play something better.' I suggest the later, frankly.");
-			}
+                Console.ReadKey();
+                System.Environment.Exit(1);
+            }
 			else if(menuOptChk == "4"){
 				for(int i=0; i<4; i++){
 							System.Threading.Thread.Sleep(200);
@@ -130,11 +116,12 @@ namespace TextAdv
 							Console.Write("(>'-')> ");
 							System.Threading.Thread.Sleep(200);
 						}
-						Console.WriteLine("\n");
+				Console.WriteLine("\n");
 
-						narraText.introScrawl(narraText.textStore(4));
+				narraText.introScrawl(narraText.textStore(12));
+                
 
-						for(int i=0; i<4; i++){
+                for (int i=0; i<4; i++){
 							System.Threading.Thread.Sleep(200);
 							Console.Write("<('-'<) ");
 							System.Threading.Thread.Sleep(200);
@@ -143,12 +130,17 @@ namespace TextAdv
 							Console.Write("(>'-')> ");
 							System.Threading.Thread.Sleep(200);
 						}
-						Console.WriteLine("\n");
+                Console.WriteLine("\n");
+
+
+                Console.ReadKey();
+                System.Environment.Exit(1); ;
 			}
 			else{
 				Console.WriteLine("Let me guess.... You can't read... Or are you just incapable of following directions?");
-			}
-		}
+			}Console.ReadKey();
+            System.Environment.Exit(1);
+        }
 	}
  }
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="armor.cs" />
     <Compile Include="charAtts.cs" />
+    <Compile Include="HumanEntity.cs" />
     <Compile Include="outTxt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
