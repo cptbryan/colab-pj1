@@ -18,3 +18,9 @@ C:\Users\dbass\OneDrive for Business\Documents\Code\colab-pj1\VS Solution\obj\De
 C:\Users\dbass\OneDrive for Business\Documents\Code\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
 C:\Users\dbass\OneDrive for Business\Documents\Code\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.CodeAnalysisLog.xml
 C:\Users\dbass\OneDrive for Business\Documents\Code\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.lastcodeanalysissucceeded
+A:\Documents\Code\colab-pj1\VS Solution\obj\Debug\colab-pj1.csprojResolveAssemblyReference.cache
+A:\Documents\Code\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
+A:\Documents\Code\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
+A:\Documents\Code\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.config
+A:\Documents\Code\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe
+A:\Documents\Code\colab-pj1\VS Solution\bin\Debug\colab-pj1.pdb
