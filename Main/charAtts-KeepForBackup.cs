@@ -67,7 +67,7 @@ namespace TextAdv
                         }
                     default:
                         {
-                            narraText.introScrawl(narraText.textStore(24));
+                            narraText.introScrawl(narraText.textStore(6));
                             break;
                         }
                 }
@@ -118,7 +118,7 @@ namespace TextAdv
                         }
                     default:
                         {
-                            narraText.introScrawl(narraText.textStore(22));
+                            narraText.introScrawl(narraText.textStore(13));
                             break;
                         }
                 }
