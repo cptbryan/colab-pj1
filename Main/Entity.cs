@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TextAdv
 {
+    [Serializable()]
     /* MonsterEntity will be where any objects or methods associated with Monters/Enemies/Monster NPC's should be written.*/
     public class MonsterEntity
     {
@@ -13,6 +14,7 @@ namespace TextAdv
     }
 
     /* HumanEntity will be where any objects or methods associated with Humans/Character/NPC's should be written.*/
+    [Serializable()]
     public class HumanEntity
     {
         
@@ -100,14 +102,44 @@ namespace TextAdv
         }
                 
         // Below is the chrCrtn method. It's purpose is to localize the switch cases related to character creation.
-        public static string chrCrtn(string objName, string usrIn)
+        public static string chrCrtn(string objName)
         {
+            
+            
             string failMessage = "You blew it!";
             switch (objName)
             {
 
+                case "Gender":
+                    {
+                        narraText.introScrawl(narraText.textStore(4));
+                        string usrIn = Console.ReadLine();
+                        HumanEntity obj = new HumanEntity();
+                        switch (usrIn)
+                        {
+                            case "1":
+                                {
+                                    obj.gender = "Male";
+                                    break;
+                                }
+                            case "2":
+                                {
+                                    obj.gender = "Female";
+                                    break;
+                                }
+                            default:
+                                {
+                                    narraText.introScrawl(narraText.textStore(13));
+                                    break;
+                                }
+                        }
+                        return obj.gender;
+                    }
                 case "hairColor":
                     {
+                        narraText.introScrawl(narraText.textStore(5));
+                        string usrIn = Console.ReadLine();
+
                         HumanEntity obj = new HumanEntity();
                         switch (usrIn)
                         {
@@ -145,32 +177,10 @@ namespace TextAdv
                         return obj.hairColor;
 
                     }
-
-                case "Gender":
-                    {
-                        HumanEntity obj = new HumanEntity();
-                        switch (usrIn)
-                        {
-                            case "1":
-                                {
-                                    obj.gender = "Male";
-                                    break;
-                                }
-                            case "2":
-                                {
-                                    obj.gender = "Female";
-                                    break;
-                                }
-                            default:
-                                {
-                                    narraText.introScrawl(narraText.textStore(13));
-                                    break;
-                                }
-                        }
-                        return obj.gender;
-                    }
                 case "species":
                     {
+                        narraText.introScrawl(narraText.textStore(19));
+                        string usrIn = Console.ReadLine();
                         HumanEntity obj = new HumanEntity();
                         switch (usrIn)
                         {
@@ -187,6 +197,11 @@ namespace TextAdv
                             case "3":
                                 {
                                     obj.species = "Elf";
+                                    break;
+                                }
+                            default:
+                                {
+                                    narraText.introScrawl(narraText.textStore(13));
                                     break;
                                 }
                         }

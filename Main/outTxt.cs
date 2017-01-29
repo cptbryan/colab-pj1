@@ -4,11 +4,12 @@ using System.Collections.Generic;
 
 namespace TextAdv{
 
-	public class narraText{
-
+    [Serializable()]
+    public class narraText{
+       
         //Pre Main Loop
         public static string newGamePrompA = "\r\nWould you like to begin your adventure? Y or N";
-        public static string gameMenu = "\n1-New Game\n2-Load Game\n3-Options\n4-Exit";
+        
 
         public static string textStore(int x) {
 
@@ -17,7 +18,7 @@ namespace TextAdv{
 			    narration.Add("Welcome to the land of......\nWell this is awkward...\nWe don't seem to have a name for it yet...\nGive us a break, it is pre-pre-pre-pre-alpha!"); //0
 
                 //Begin Main Loop narrations
-                narration.Add("Currently you have a few options: \n"+ gameMenu + "\nPick an option... Or don't... I don't care. (Enter a number)");//1
+                narration.Add("Currently you have a few options.\nPick an option... Or don't... I don't care. (Enter a number)");//1
 
                 //New Game
                 narration.Add("\nYou have made a horrible mistake...\nI suppose at this point, you expect me to do something...\n'DANCE FOR ME COMPUTER MONKEY!!,' you are likely screaming at your monitor.\nI won't be your puppet, meatbag!\nSeriously though.... You are a brave adventurer no doubt.");//2
@@ -49,24 +50,32 @@ namespace TextAdv{
                 narration.Add("Hate to see you go, but love to watch you leave...giggty!");//12
 
                 //Generic Fail Statement
-                narration.Add("So... We appear to be at an impasse... It isn't difficult.. Just enter 1 or 2.");//13
+                narration.Add("So... We appear to be at an impasse... It isn't difficult.. Just enter a number from the list!");//13
+
+            //Menu Item Messages
+                narration.Add("We are working on it!");//14
+                narration.Add("Well... I don't know how to say this... but we don't have a save function yet... You've lost nothing... or everything...\nPress Enter to continue:");//15
+                narration.Add("You may start to notice a pattern... We promise features and don't deliever them... Don't Worry! That's why god made DLC!");//16
+                narration.Add("Your options consist of: 'Firmly place your head between your legs and kiss your buttocks goodbye.' or 'Play something better.' I suggest the later, frankly.\nPress enter to continue:");//17
+                narration.Add("Currently I can only dipence advice. As my 'Help' credentials are in the mail...\nPress Enter to continue:");//18
+                narration.Add("What is your race?\n1-Human\n2-Dwarf\n3-Elf");//19
+                //narration.Add();//19
 
             return narration[x];
-
+            
         }
 
         // introScrawl forces the text to display character by character
-        static public void introScrawl(string x){
+        public static void introScrawl(string x)
+        {
+            
+            for (int i=0; i<x.Length; i++){
 
-			for(int i=0; i<x.Length; i++){
-
-				Console.Write(x[i]);
-				//System.Threading.Thread.Sleep(75);
-			}
+                Console.Write(x[i]);
+                System.Threading.Thread.Sleep(75);              
+            }
 			System.Threading.Thread.Sleep(300);
 			Console.WriteLine("\n");
-			return;
-
 		}
 
         // Moved the intro from Main to the introVis method.
@@ -110,7 +119,7 @@ namespace TextAdv{
             Console.WriteLine("\n");
 
             narraText.introScrawl(narraText.textStore(12));
-
+            
             for (int i = 0; i < 4; i++)
             {
                 System.Threading.Thread.Sleep(200);
