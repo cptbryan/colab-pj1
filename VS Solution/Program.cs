@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Xml;
+
 /* Just some boiler plate placeholder code.*/
 
 namespace TextAdv
 {
-    [Serializable()]
+    
     class advMain
     {
         public static string menuOptChk = "";
@@ -20,12 +20,18 @@ namespace TextAdv
             narraText.introScrawl(narraText.textStore(1));
             EngineMech.mainMenu(menuOptChk);
 
-
+            while(menuOptChk != "")
+            {
+                narraText.introScrawl(narraText.textStore(26));
+                Console.WriteLine("To exit press enter");
+                Console.ReadLine();
+                narraText.outVis();
+            }
 
             // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.
-            narraText.introScrawl(narraText.textStore(2));
+            
             //Assigning the return value of asnUsrName method to usrName. Might not be necessary, so keep that in mind. 
-            string usrName = HumanEntity.asnUsrName();
+            
 
             //Begin Character Creation //Character Creation will be moved to Human Entity.cs
 

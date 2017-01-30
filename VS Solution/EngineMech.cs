@@ -1,21 +1,28 @@
-﻿using System;
+using System;
 using System.IO;
-using System.Xml;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+
 
 namespace TextAdv
 {
-    [Serializable()]
+    
     public class EngineMech
     {
         public static void newGame()
         {
-            
+
+            narraText.introScrawl(narraText.textStore(2));
             HumanEntity.asnUsrName();
             HumanEntity.chrCrtn("gender");
-            HumanEntity.chrCrtn("hairColor");
-            HumanEntity.chrCrtn("species");
+            HumanEntity.chrCrtn("facialHair");
+            HumanEntity.chrCrtn("HairStyle");
+            HumanEntity.chrCrtn("HairColor");
+            HumanEntity.chrCrtn("Species");
+            HumanEntity.chrCrtn("Height");
+            HumanEntity.chrCrtn("Weight");
+            HumanEntity.chrCrtn("Build");
+
+
 
         }
 
@@ -23,7 +30,7 @@ namespace TextAdv
         {
             //serialize objects/data
             
-            narraText.introScrawl(narraText.textStore(15));
+            narraText.introScrawl(narraText.textStore(27));
             Console.ReadKey();
 
 
@@ -31,9 +38,9 @@ namespace TextAdv
 
         public static void loadGame()
         {
-            //load serailized data
+            // Deserailize data
             
-            narraText.introScrawl(narraText.textStore(16));
+            narraText.introScrawl(narraText.textStore(28));
             
             Console.ReadKey();
             
@@ -78,7 +85,7 @@ namespace TextAdv
 
             }
                          
-            //narraText.introScrawl(narraText.textStore(17));
+            //narraText.introScrawl(narraText.textStore(29));
             //Console.ReadKey();
             
            
@@ -99,7 +106,7 @@ namespace TextAdv
         public static string helpMenu()
         {
             string x = "Sorry";
-            narraText.introScrawl(narraText.textStore(18));
+            narraText.introScrawl(narraText.textStore(30));
             return x;
         }
 
@@ -197,4 +204,30 @@ namespace TextAdv
 
         }
     }
+
+    //public class XmlManager<T>
+    //{
+    //    public Type Type { get; private set; }
+
+    //    public T Load(string path)
+    //    {
+    //        T instance;
+    //        using (TextReader reader = new StreamReader(path))
+    //        {
+                
+    //            XmlSerializer xml = new XmlSerializer(Type);
+    //            instance = (T)xml.Deserialize(reader);
+    //        }
+    //        return instance;
+    //    }
+
+    //    public void Save(string path, object obj)
+    //    {
+    //        using (TextWriter writer = new StreamWriter(path))
+    //        {
+    //            XmlSerializer xml = new XmlSerializer(Type);
+    //            xml.Serialize(writer, obj);
+    //        }
+    //    }
+    //}
 }
