@@ -43,14 +43,14 @@ namespace TextAdv
 
         //variable declaration
         public string entName { get; set; }
-        private string entGender { get; set; }
-        private string entFacialHair { get; set; }
-        private string entHairStyle { get; set; }
-        private string entHairColor { get; set; }
-        private string entSpecies { get; set; }
-        private string entHeight { get; set; }
-        private string entWeight { get; set; }
-        private string entBuild { get; set; }
+        public string entGender { get; set; }
+        public string entFacialHair { get; set; }
+        public string entHairStyle { get; set; }
+        public string entHairColor { get; set; }
+        public string entSpecies { get; set; }
+        public string entHeight { get; set; }
+        public string entWeight { get; set; }
+        public string entBuild { get; set; }
 
         public HumanEntity()
         {

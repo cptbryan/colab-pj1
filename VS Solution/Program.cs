@@ -22,6 +22,7 @@ namespace TextAdv
 
             while(menuOptChk != "")
             {
+
                 narraText.introScrawl(narraText.textStore(26));
                 Console.WriteLine("To exit press enter");
                 Console.ReadLine();

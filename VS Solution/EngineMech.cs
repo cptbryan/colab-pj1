@@ -21,6 +21,8 @@ namespace TextAdv
             HumanEntity.chrCrtn("Height");
             HumanEntity.chrCrtn("Weight");
             HumanEntity.chrCrtn("Build");
+            narraText.introScrawl(narraText.textStore(31));
+            Console.ReadLine();
 
 
 
@@ -147,7 +149,7 @@ namespace TextAdv
                         }
 
                 }
-                return gameMenu;
+                return menuOptChk;
             }
             else if(menuOptChk != "")
             {
