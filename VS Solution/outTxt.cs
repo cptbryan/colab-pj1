@@ -12,7 +12,7 @@ namespace TextAdv{
 		
 
 		public static string textStore(int x) {
-			HumanEntity nuChar = new HumanEntity();
+			
 
 			List<string> narration = new List<string>();
 				// Pre Main Loop Narration
@@ -85,7 +85,7 @@ namespace TextAdv{
 				narration.Add("Currently I can only dipence advice. As my 'Help' credentials are in the mail...\nPress Enter to continue:");//30
 
 		        //MainLoop Next
-		        narration.Add("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is: " + nuChar.entName + "\nYour gender is: " + nuChar.entGender + "\nYour choice of facial hair is: " + nuChar.entFacialHair + "\nYour hair style is: " + nuChar.entHairStyle + "\nYour hair color is: " + nuChar.entHairColor + "\nYour race is: " + nuChar.entSpecies + "\nYour height is: " + nuChar.entHeight + "\nYour weight is: " + nuChar.entWeight + "\nYour build is: " + nuChar.entBuild);//31
+		        narration.Add("Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is: " + HumanEntity.entName + "\nYour gender is: " + HumanEntity.entGender + "\nYour choice of facial hair is: " + HumanEntity.entFacialHair + "\nYour hair style is: " + HumanEntity.entHairStyle + "\nYour hair color is: " + HumanEntity.entHairColor + "\nYour race is: " + HumanEntity.entSpecies + "\nYour height is: " + HumanEntity.entHeight + "\nYour weight is: " + HumanEntity.entWeight + "\nYour build is: " + HumanEntity.entBuild);//31
 				
 				//narration.Add();//31
 

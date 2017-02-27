@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextAdv
 {
-    
-    /* MonsterEntity will be where any objects or methods associated with Monters/Enemies/Monster NPC's should be written.*/
+
+    /// <summary>
+    /// The MonsterEntity Class should contain all variables endemic to the creation or instantiation of a Monster type Entity.
+    /// </summary>
 
     public class MonsterEntity
     {
@@ -36,37 +38,39 @@ namespace TextAdv
         }
     }
 
-    /* HumanEntity will be where any objects or methods associated with Humans/Character/NPC's should be written.*/
+    /// <summary>
+    /// The HumanEntity Class should contain all variables endemic to the creation or instantiation of a Human type Entity.
+    /// </summary>
     
     public class HumanEntity
     {
 
         //variable declaration
-        public string entName { get; set; }
-        public string entGender { get; set; }
-        public string entFacialHair { get; set; }
-        public string entHairStyle { get; set; }
-        public string entHairColor { get; set; }
-        public string entSpecies { get; set; }
-        public string entHeight { get; set; }
-        public string entWeight { get; set; }
-        public string entBuild { get; set; }
+        public static string entName { get; set; }
+        public static string entGender { get; set; }
+        public static string entFacialHair { get; set; }
+        public static string entHairStyle { get; set; }
+        public static string entHairColor { get; set; }
+        public static string entSpecies { get; set; }
+        public static string entHeight { get; set; }
+        public static string entWeight { get; set; }
+        public static string entBuild { get; set; }
 
         public HumanEntity()
         {
-            this.entName = entName;
-            this.entGender = entGender;
-            this.entFacialHair = entFacialHair;
-            this.entHairStyle = entHairStyle;
-            this.entHairColor = entHairColor;
-            this.entSpecies = entSpecies;
-            this.entHeight = entHeight;
-            this.entWeight = entWeight;
-            this.entBuild = entBuild;
+            //this.entName = entName;
+            //this.entGender = entGender;
+            //this.entFacialHair = entFacialHair;
+            //this.entHairStyle = entHairStyle;
+            //this.entHairColor = entHairColor;
+            //this.entSpecies = entSpecies;
+            //this.entHeight = entHeight;
+            //this.entWeight = entWeight;
+            //this.entBuild = entBuild;
         }
 
 
-        // Below is the asnUsrName method. It's purpose is to localize the definition of the usrName variable.
+        #region Character Name Creation
         public static string asnUsrName()
         {   /* I moved usrName (which stores the user chosen name) here, from it's previous location in the Main loop.
                I changed the usrInputA variable to validateName (which is used to verify that the user name is what the user intended it to be) to better convey its use.
@@ -77,12 +81,12 @@ namespace TextAdv
             // In the main loop (subject to improvement) call the asnUsrName method/function.
             // Within the asnUsrName method/function, we prompt the user to enter the name of their character, and assign it to the usrName variable.   
             narraText.introScrawl(narraText.textStore(3));//Enter your name
-            nuChar.entName = Console.ReadLine();
+            HumanEntity.entName = Console.ReadLine();
             //Below I am assigning strings to variables to aid in the use of the introScrawl method.
-            string usrNameCreationA = nuChar.entName + " ..." + " Really?\n";
-            string usrNameCreationB = nuChar.entName + "... That sounds rather effeminate... Whatever... Yolo #Nojudgement\n";
-            string usrNameCreationC = "Are you sure that " + nuChar.entName + " is your name? Y or N";
-            string usrNameCreationD = "Vundabar! " + nuChar.entName + " it is.";
+            string usrNameCreationA = HumanEntity.entName + " ..." + " Really?\n";
+            string usrNameCreationB = HumanEntity.entName + "... That sounds rather effeminate... Whatever... Yolo #Nojudgement\n";
+            string usrNameCreationC = "Are you sure that " + HumanEntity.entName + " is your name? Y or N";
+            string usrNameCreationD = "Vundabar! " + HumanEntity.entName + " it is.";
             narraText.introScrawl("\n" + usrNameCreationA + usrNameCreationB + "\n" + usrNameCreationC + "\n");
             validateName = Console.ReadLine().ToUpper();
             // If the user enters Y, the while loop is obviously bypassed.
@@ -90,11 +94,11 @@ namespace TextAdv
             {
                 // Instead of re-assigning (or doing something more clever) I hard coded the responses here.
                 narraText.introScrawl("So, what is your name then?");
-                nuChar.entName = Console.ReadLine();
-                Console.Write(nuChar.entName);
+                HumanEntity.entName = Console.ReadLine();
+                Console.Write(HumanEntity.entName);
                 narraText.introScrawl(" ... That sounds rather effeminate... Whatever... Yolo #Nojudgement");
                 narraText.introScrawl("Are you sure that ");
-                Console.Write(nuChar.entName);
+                Console.Write(HumanEntity.entName);
                 narraText.introScrawl(" is your name? Y or N");
                 validateName = Console.ReadLine().ToUpper();
 
@@ -104,33 +108,35 @@ namespace TextAdv
             narraText.introScrawl(usrNameCreationD);
 
 
-            return nuChar.entName;
+            return HumanEntity.entName;
         }
-                
-        // Below is the chrCrtn method. It's purpose is to localize the switch cases related to character creation.
+        #endregion   
+        
+        #region Character Attribute Creation
         public static string chrCrtn(string objName)
         {
+
             
-            
+            HumanEntity HumanEntity = new HumanEntity();
             string failMessage = "You blew it!";
             switch (objName)
             {
-
+                
                 case "Gender":
                 {
                     narraText.introScrawl(narraText.textStore(4));
                     string usrIn = Console.ReadLine();
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entGender = "Male";
+                                HumanEntity.entGender = "Male";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entGender = "Female";
+                                HumanEntity.entGender = "Female";
                                 break;
                             }
                         default:
@@ -139,7 +145,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entGender;
+                    return HumanEntity.entGender;
                 }
                 case "FacialHair":
                 {
@@ -147,57 +153,57 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(6));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entFacialHair = "Long and Braided";
+                                HumanEntity.entFacialHair = "Long and Braided";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entFacialHair = "Big and Bushy";
+                                HumanEntity.entFacialHair = "Big and Bushy";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entFacialHair = "Wildman";
+                                HumanEntity.entFacialHair = "Wildman";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entFacialHair = "Fu-Man Chu";
+                                HumanEntity.entFacialHair = "Fu-Man Chu";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entFacialHair = "C'mon Bruther";
+                                HumanEntity.entFacialHair = "C'mon Bruther";
                                 break;
                             }
                         case "6":
                             {
-                                nuChar.entFacialHair = "Mutton Chops";
+                                HumanEntity.entFacialHair = "Mutton Chops";
                                 break;
                             }
                         case "7":
                             {
-                                nuChar.entFacialHair = "Thin 'n Dirty";
+                                HumanEntity.entFacialHair = "Thin 'n Dirty";
                                 break;
                             }
                         case "8":
                             {
-                                nuChar.entFacialHair = "The Sparrow";
+                                HumanEntity.entFacialHair = "The Sparrow";
                                 break;
                             }
                         case "9":
                             {
-                                nuChar.entFacialHair = "Honest Abe";
+                                HumanEntity.entFacialHair = "Honest Abe";
                                 break;
                             }
                         case "10":
                             {
-                                nuChar.entFacialHair = "Prepubescent";
+                                HumanEntity.entFacialHair = "Prepubescent";
                                 break;
                             }
                         default:
@@ -206,7 +212,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entFacialHair;
+                    return HumanEntity.entFacialHair;
                 }
                 case "HairStyle":
                 {
@@ -214,57 +220,57 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(8));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entHairStyle = "Long and Free";
+                                HumanEntity.entHairStyle = "Long and Free";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entHairStyle = "Soldier";
+                                HumanEntity.entHairStyle = "Soldier";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entHairStyle = "Tonsure";
+                                HumanEntity.entHairStyle = "Tonsure";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entHairStyle = "Top-Knot";
+                                HumanEntity.entHairStyle = "Top-Knot";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entHairStyle = "Shaved";
+                                HumanEntity.entHairStyle = "Shaved";
                                 break;
                             }
                         case "6":
                             {
-                                nuChar.entHairStyle = "Afro";
+                                HumanEntity.entHairStyle = "Afro";
                                 break;
                             }
                         case "7":
                             {
-                                nuChar.entHairStyle = "Shoulder Length";
+                                HumanEntity.entHairStyle = "Shoulder Length";
                                 break;
                             }
                         case "8":
                             {
-                                nuChar.entHairStyle = "HighTop-Fade";
+                                HumanEntity.entHairStyle = "HighTop-Fade";
                                 break;
                             }
                         case "9":
                             {
-                                nuChar.entHairStyle = "Long Dreads";
+                                HumanEntity.entHairStyle = "Long Dreads";
                                 break;
                             }
                         case "10":
                             {
-                                nuChar.entHairStyle = "Long Shaved Sides";
+                                HumanEntity.entHairStyle = "Long Shaved Sides";
                                 break;
                             }
                         default:
@@ -273,7 +279,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entHairStyle;
+                    return HumanEntity.entHairStyle;
 
                 }
                 case "HairColor":
@@ -282,32 +288,32 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(10));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entHairColor = "Black";
+                                HumanEntity.entHairColor = "Black";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entHairColor = "Brown";
+                                HumanEntity.entHairColor = "Brown";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entHairColor = "Blonde";
+                                HumanEntity.entHairColor = "Blonde";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entHairColor = "Red";
+                                HumanEntity.entHairColor = "Red";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entHairColor = "White";
+                                HumanEntity.entHairColor = "White";
                                 break;
                             }
                         default:
@@ -316,7 +322,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entHairColor;
+                    return HumanEntity.entHairColor;
 
                 }
                 case "Species":
@@ -324,22 +330,22 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(11));
                     narraText.introScrawl(narraText.textStore(12));
                     string usrIn = Console.ReadLine();
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entSpecies = "Human";
+                                HumanEntity.entSpecies = "Human";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entSpecies = "Dwarf";
+                                HumanEntity.entSpecies = "Dwarf";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entSpecies = "Elf";
+                                HumanEntity.entSpecies = "Elf";
                                 break;
                             }
                         default:
@@ -348,7 +354,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entSpecies;
+                    return HumanEntity.entSpecies;
                 }
                 case "Height":
                 {
@@ -356,32 +362,32 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(14));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entHeight = "Short";
+                                HumanEntity.entHeight = "Short";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entHeight = "Average";
+                                HumanEntity.entHeight = "Average";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entHeight = "Tall";
+                                HumanEntity.entHeight = "Tall";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entHeight = "Giant";
+                                HumanEntity.entHeight = "Giant";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entHeight = "How's the weather up there";
+                                HumanEntity.entHeight = "How's the weather up there";
                                 break;
                             }
                         default:
@@ -390,7 +396,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entHeight;
+                    return HumanEntity.entHeight;
 
                 }
                 case "Weight":
@@ -399,32 +405,32 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(16));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entWeight = "Feather Weight";
+                                HumanEntity.entWeight = "Feather Weight";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entWeight = "Average";
+                                HumanEntity.entWeight = "Average";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entWeight = "Big'un";
+                                HumanEntity.entWeight = "Big'un";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entWeight = "Brick House";
+                                HumanEntity.entWeight = "Brick House";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entWeight = "Fluffy";
+                                HumanEntity.entWeight = "Fluffy";
                                 break;
                             }
                         default:
@@ -433,7 +439,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entWeight;
+                    return HumanEntity.entWeight;
 
                 }
                 case "Build":
@@ -442,32 +448,32 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(18));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entBuild = "Struggles to lift soap";
+                                HumanEntity.entBuild = "Struggles to lift soap";
                                 break;
                             }
                         case "2":
                             {
-                                nuChar.entBuild = "Average";
+                                HumanEntity.entBuild = "Average";
                                 break;
                             }
                         case "3":
                             {
-                                nuChar.entBuild = "Fit";
+                                HumanEntity.entBuild = "Fit";
                                 break;
                             }
                         case "4":
                             {
-                                nuChar.entBuild = "Ripped";
+                                HumanEntity.entBuild = "Ripped";
                                 break;
                             }
                         case "5":
                             {
-                                nuChar.entBuild = "Roids";
+                                HumanEntity.entBuild = "Roids";
                                 break;
                             }
                         default:
@@ -476,7 +482,7 @@ namespace TextAdv
                                 break;
                             }
                     }
-                    return nuChar.entBuild;
+                    return HumanEntity.entBuild;
 
                 }
                 default:
@@ -485,10 +491,10 @@ namespace TextAdv
                 }
                 
             }
-
+            
 
         }
-       
+        #endregion
     }
 }
 

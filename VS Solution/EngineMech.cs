@@ -13,8 +13,8 @@ namespace TextAdv
 
             narraText.introScrawl(narraText.textStore(2));
             HumanEntity.asnUsrName();
-            HumanEntity.chrCrtn("gender");
-            HumanEntity.chrCrtn("facialHair");
+            HumanEntity.chrCrtn("Gender");
+            HumanEntity.chrCrtn("FacialHair");
             HumanEntity.chrCrtn("HairStyle");
             HumanEntity.chrCrtn("HairColor");
             HumanEntity.chrCrtn("Species");
