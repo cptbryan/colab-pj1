@@ -216,7 +216,7 @@ namespace TextAdv
     //        T instance;
     //        using (TextReader reader = new StreamReader(path))
     //        {
-                
+
     //            XmlSerializer xml = new XmlSerializer(Type);
     //            instance = (T)xml.Deserialize(reader);
     //        }
