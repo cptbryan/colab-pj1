@@ -12,9 +12,10 @@ namespace TextAdv{
 		
 
 		public static string textStore(int x) {
-			HumanEntity nuChar = new HumanEntity();
+            HumanEntity nuChar = new HumanEntity();
 
-			List<string> narration = new List<string>();
+
+            List<string> narration = new List<string>();
 				// Pre Main Loop Narration
 				narration.Add("Welcome to the land of......\nWell this is awkward...\nWe don't seem to have a name for it yet...\nGive us a break, it is pre-pre-pre-pre-alpha!"); //0
 

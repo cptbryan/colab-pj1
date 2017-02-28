@@ -10,38 +10,39 @@ namespace TextAdv
     /// <summary>
     /// The MonsterEntity Class should contain all variables endemic to the creation or instantiation of a Monster type Entity.
     /// </summary>
-
+    #region Monster Base Class
     public class MonsterEntity
     {
         //variable declaration
-        public string entName { get; set; }
-        private string entGender { get; set; }
-        private string entHair { get; set; }
-        private string entHairStyle { get; set; }
-        private string entHairColor { get; set; }
-        private string entSpecies { get; set; }
-        private string entHeight { get; set; }
-        private string entWeight { get; set; }
-        private string entBuild { get; set; }
+        public static string entName { get; set; }
+        public static string entGender { get; set; }
+        public static string entHair { get; set; }
+        public static string entHairStyle { get; set; }
+        public static string entHairColor { get; set; }
+        public static string entSpecies { get; set; }
+        public static string entHeight { get; set; }
+        public static string entWeight { get; set; }
+        public static string entBuild { get; set; }
 
         public MonsterEntity()
         {
-            this.entName = entName;
-            this.entGender = entGender;
-            this.entHair = entHair;
-            this.entHairStyle = entHairStyle;
-            this.entHairColor = entHairColor;
-            this.entSpecies = entSpecies;
-            this.entHeight = entHeight;
-            this.entWeight = entWeight;
-            this.entBuild = entBuild;
+            //this.entName = entName;
+            //this.entGender = entGender;
+            //this.entHair = entHair;
+            //this.entHairStyle = entHairStyle;
+            //this.entHairColor = entHairColor;
+            //this.entSpecies = entSpecies;
+            //this.entHeight = entHeight;
+            //this.entWeight = entWeight;
+            //this.entBuild = entBuild;
         }
     }
+    #endregion
 
     /// <summary>
     /// The HumanEntity Class should contain all variables endemic to the creation or instantiation of a Human type Entity.
     /// </summary>
-    
+   #region Human Base Class 
     public class HumanEntity
     {
 
@@ -496,6 +497,7 @@ namespace TextAdv
         }
         #endregion
     }
+    #endregion
 }
 
 

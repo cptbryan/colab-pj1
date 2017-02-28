@@ -5,9 +5,10 @@ using System.Xml.Serialization;
 
 namespace TextAdv
 {
-    
+    #region Game Systems Class  
     public class EngineMech
     {
+        #region New Game Method
         public static void newGame()
         {
 
@@ -27,7 +28,10 @@ namespace TextAdv
 
 
         }
+        #endregion
 
+
+        #region Save Game Method *init XML Serializer Write*
         public static void saveGame()
         {
             //serialize objects/data
@@ -37,7 +41,9 @@ namespace TextAdv
 
 
         }
+        #endregion
 
+        #region Load Game Method *ini XML Serializer Read*
         public static void loadGame()
         {
             // Deserailize data
@@ -47,7 +53,9 @@ namespace TextAdv
             Console.ReadKey();
             
         }
+        #endregion
 
+        #region Options Menu Method
         public static void optionsMenu()
         {
             string usrMod;
@@ -104,14 +112,18 @@ namespace TextAdv
             */
 
         }
+        #endregion
 
+        #region Help Menu Method
         public static string helpMenu()
         {
             string x = "Sorry";
             narraText.introScrawl(narraText.textStore(30));
             return x;
         }
-
+        #endregion
+        
+        #region Main Menu *Can call all other menu items*
         public static string mainMenu(string menuOptChk)
         {
             
@@ -205,8 +217,11 @@ namespace TextAdv
             */
 
         }
+        #endregion
     }
+    #endregion
 
+    #region XML Manager Generic Class **WIP**
     //public class XmlManager<T>
     //{
     //    public Type Type { get; private set; }
@@ -216,7 +231,7 @@ namespace TextAdv
     //        T instance;
     //        using (TextReader reader = new StreamReader(path))
     //        {
-                
+
     //            XmlSerializer xml = new XmlSerializer(Type);
     //            instance = (T)xml.Deserialize(reader);
     //        }
@@ -232,4 +247,5 @@ namespace TextAdv
     //        }
     //    }
     //}
+    #endregion
 }
