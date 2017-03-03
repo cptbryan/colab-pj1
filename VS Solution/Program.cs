@@ -12,21 +12,21 @@ namespace TextAdv
 
         public static void Main(string[] args)
         {
-            EngineMech.optionsMenu();
+            EngineMech.OptionsMenu();
             //Moved the intro section of braces and text into the introVis method
-            narraText.introVis();
+            NarraText.IntroVis();
 
 
-            narraText.introScrawl(narraText.textStore(1));
-            EngineMech.mainMenu(menuOptChk);
+            NarraText.IntroScrawl(NarraText.TextStore(1));
+            EngineMech.MainMenu(menuOptChk);
 
             while(menuOptChk != "")
             {
 
-                narraText.introScrawl(narraText.textStore(26));
+                NarraText.IntroScrawl(NarraText.TextStore(26));
                 Console.WriteLine("To exit press enter");
                 Console.ReadLine();
-                narraText.outVis();
+                NarraText.OutVis();
             }
 
             // This is honestly where the "Game Loop" begins. Generally this would be "New Game" on a menu.

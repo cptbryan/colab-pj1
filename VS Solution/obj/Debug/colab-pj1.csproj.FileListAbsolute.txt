@@ -1,0 +1,19 @@
+C:\Projects\colab-pj1\colab-pj1\bin\Debug\colab-pj1.exe.config
+C:\Projects\colab-pj1\colab-pj1\obj\Debug\colab-pj1.csprojResolveAssemblyReference.cache
+C:\Projects\colab-pj1\bin\Debug\colab-pj1.exe.config
+A:\Documents\Code\colab-pj1\colab-pj1\bin\Debug\colab-pj1.exe.config
+C:\Projects\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.config
+C:\Projects\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe
+C:\Projects\colab-pj1\VS Solution\bin\Debug\colab-pj1.pdb
+C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.csprojResolveAssemblyReference.cache
+C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
+C:\Projects\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
+C:\Programs\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.config
+C:\Programs\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
+C:\Programs\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe.config
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\obj\Debug\colab-pj1.exe
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\obj\Debug\colab-pj1.pdb
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\bin\Debug\colab-pj1.exe
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\bin\Debug\colab-pj1.pdb
+C:\Users\dbass\Google Drive\Code\C#\colab-pj1\VS Solution\obj\Debug\colab-pj1.csprojResolveAssemblyReference.cache

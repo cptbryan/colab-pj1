@@ -13,14 +13,14 @@ namespace TextAdv
     {
         //variable declaration
         public string entName { get; set; }
-        private string entGender { get; set; }
-        private string entHair { get; set; }
-        private string entHairStyle { get; set; }
-        private string entHairColor { get; set; }
-        private string entSpecies { get; set; }
-        private string entHeight { get; set; }
-        private string entWeight { get; set; }
-        private string entBuild { get; set; }
+        public string entGender { get; set; }
+        public string entHair { get; set; }
+        public string entHairStyle { get; set; }
+        public string entHairColor { get; set; }
+        public string entSpecies { get; set; }
+        public string entHeight { get; set; }
+        public string entWeight { get; set; }
+        public string entBuild { get; set; }
 
         public MonsterEntity()
         {
@@ -72,6 +72,7 @@ namespace TextAdv
                I changed the usrInputA variable to validateName (which is used to verify that the user name is what the user intended it to be) to better convey its use.
                */
             string validateName;
+             
             HumanEntity nuChar = new HumanEntity();
                         
             // In the main loop (subject to improvement) call the asnUsrName method/function.
@@ -110,8 +111,8 @@ namespace TextAdv
         // Below is the chrCrtn method. It's purpose is to localize the switch cases related to character creation.
         public static string chrCrtn(string objName)
         {
-            
-            
+            HumanEntity nuChar = new HumanEntity();
+
             string failMessage = "You blew it!";
             switch (objName)
             {
@@ -120,18 +121,16 @@ namespace TextAdv
                 {
                     narraText.introScrawl(narraText.textStore(4));
                     string usrIn = Console.ReadLine();
-                    HumanEntity nuChar = new HumanEntity();
+                    
                     switch (usrIn)
                     {
                         case "1":
                             {
-                                nuChar.entGender = "Male";
-                                break;
+                                return nuChar.entGender = "Male";                                
                             }
                         case "2":
                             {
-                                nuChar.entGender = "Female";
-                                break;
+                               return nuChar.entGender = "Female";                                
                             }
                         default:
                             {
@@ -147,7 +146,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(6));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -214,7 +213,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(8));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -282,7 +281,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(10));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -324,7 +323,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(11));
                     narraText.introScrawl(narraText.textStore(12));
                     string usrIn = Console.ReadLine();
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -356,7 +355,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(14));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -399,7 +398,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(16));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":
@@ -442,7 +441,7 @@ namespace TextAdv
                     narraText.introScrawl(narraText.textStore(18));
                     string usrIn = Console.ReadLine();
 
-                    HumanEntity nuChar = new HumanEntity();
+                    //HumanEntity nuChar = new HumanEntity();
                     switch (usrIn)
                     {
                         case "1":

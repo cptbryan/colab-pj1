@@ -17,7 +17,11 @@ namespace TextAdv
     public class EngineMech
     {
         #region New Game Method
+<<<<<<< HEAD
         public static void NewGame()
+=======
+        public static void newGame()
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
 
             NarraText.IntroScrawl(NarraText.TextStore(2));
@@ -39,6 +43,7 @@ namespace TextAdv
 
         }
         #endregion
+<<<<<<< HEAD
 
 
         #region Save Game Method *init XML Serializer Write*
@@ -46,6 +51,12 @@ namespace TextAdv
         // This is not optimal, but the action of saveGame will only have two modes.
         // First Run: SaveGame has not been run in recent context OR Second Run: SaveGame has been run in recent context. 
         public static void SaveGame(bool firstRun)
+=======
+
+
+        #region Save Game Method *init XML Serializer Write*
+        public static void saveGame()
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
 
             string fileName = "HumanEntity.xml";
@@ -110,7 +121,11 @@ namespace TextAdv
         #endregion
 
         #region Load Game Method *ini XML Serializer Read*
+<<<<<<< HEAD
         public static void LoadGame()
+=======
+        public static void loadGame()
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             // Deserailize data
             
@@ -122,7 +137,11 @@ namespace TextAdv
         #endregion
 
         #region Options Menu Method
+<<<<<<< HEAD
         public static void OptionsMenu()
+=======
+        public static void optionsMenu()
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             string usrMod;
             int orgConWidth, maxConWidth, usrConWidth;
@@ -181,7 +200,11 @@ namespace TextAdv
         #endregion
 
         #region Help Menu Method
+<<<<<<< HEAD
         public static string HelpMenu()
+=======
+        public static string helpMenu()
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             string x = "Sorry";
             NarraText.IntroScrawl(NarraText.TextStore(30));
@@ -190,7 +213,11 @@ namespace TextAdv
         #endregion
         
         #region Main Menu *Can call all other menu items*
+<<<<<<< HEAD
         public static string MainMenu(string menuOptChk)
+=======
+        public static string mainMenu(string menuOptChk)
+>>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             
             if (menuOptChk == "")
