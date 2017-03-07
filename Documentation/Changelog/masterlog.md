@@ -50,6 +50,6 @@ Went through and fixed some bugs and syntatical errors. Plan is to add weapon se
  ###1/20/2017
  Debugged some of the switches. -EB
 
- ###3/6/2017
-  I implemented basic save and load state mechanics. The user now has the ability to start a new game, create their character, and save the changes to XML.
- This gives the user the ability to comeback to the game and load their character information. TL;DR I implemented persistence. -DB		
+###3/6/2017
+  I implemented basic save and load state mechanics. The user now has the ability to start a new game, create their character, and save  the changes to XML.
+This gives the user the ability to comeback to the game and load their character information. TL;DR I implemented persistence. -DB		
