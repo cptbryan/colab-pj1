@@ -15,7 +15,8 @@ namespace TextAdv
         #region Narration Text Store
         public static string TextStore(int x)
         {
-
+            
+            var playerChar = EngineMech.LoadGame<HumanEntity>("UserState.xml");
 
             List<string> narration = new List<string>
             {
@@ -87,9 +88,9 @@ namespace TextAdv
                 "You may start to notice a pattern... We promise features and don't deliever them... Don't Worry! That's why god made DLC!",//28
                 "Your options consist of: 'Firmly place your head between your legs and kiss your buttocks goodbye.' or 'Play something better.' I suggest the later, frankly.\nPress enter to continue:",//29
                 "Currently I can only dipence advice. As my 'Help' credentials are in the mail...\nPress Enter to continue:",//30
-
+                
                 //MainLoop Next
-                "Let me make sure I heard you 'write'... Heh Heh...Not funny? Whatever...\nSo your name is: " + HumanEntity.EntName + "\nYour gender is: " + HumanEntity.EntGender + "\nYour choice of facial hair is: " + HumanEntity.EntFacialHair + "\nYour hair style is: " + HumanEntity.EntHairStyle + "\nYour hair color is: " + HumanEntity.EntHairColor + "\nYour race is: " + HumanEntity.EntSpecies + "\nYour height is: " + HumanEntity.EntHeight + "\nYour weight is: " + HumanEntity.EntWeight + "\nYour build is: " + HumanEntity.EntBuild//31
+                "I'll now list your choices...\nName: " + playerChar.EntName + "\nGender: " + playerChar.EntGender + "\nFacial Hair: " + playerChar.EntFacialHair + "\nHair Style: " + playerChar.EntHairStyle + "\nHair Color: " + playerChar.EntHairColor + "\nRace: " + playerChar.EntSpecies + "\nHeight: " + playerChar.EntHeight + "\nWeight: " + playerChar.EntWeight + "\nBuild: " + playerChar.EntBuild//31
             };
 
             //narration.Add();//31
@@ -108,7 +109,7 @@ namespace TextAdv
             {
 
                 Console.Write(x[i]);
-                //System.Threading.Thread.Sleep(75);              
+                System.Threading.Thread.Sleep(75);
             }
             System.Threading.Thread.Sleep(300);
             Console.WriteLine("\n");

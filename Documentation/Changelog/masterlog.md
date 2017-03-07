@@ -32,20 +32,24 @@ Inform me if the commenting isn't substantial enough to convey my intent. Also w
 
 ###1/18/2017
   Began the creation of a basic character customization system. Added charAtts class to hold character selections.
-Will most likely evolve into something far greater than hair color or clothes color. _-EB_
+Will most likely evolve into something far greater than hair color or clothes color. -EB
 
 ###1/19/2017
   Continued to evolve character customization. Changed customization object instantiation from "playerLook" to "charAppear" to signify
  that it is infact appearance related. Also changed if else statements to switches in order to de clutter the code.
- Also continued to add dialogue, although my dialogue writing skills are nowhere near the caliber of my collegue. _-EB_
+ Also continued to add dialogue, although my dialogue writing skills are nowhere near the caliber of my collegue. -EB
 
 ###1/20/2017
   Finished what is our based character customization system. Created a VS project.
-Went through and fixed some bugs and syntatical errors. Plan is to add weapon selection system in next. _-EB_
+Went through and fixed some bugs and syntatical errors. Plan is to add weapon selection system in next. -EB
 
 ###1/22/2017
   Restored the code to a functional form. Modifyied the Readme portion of our project. Restructured the **masterlog** to
- represent the visual design that I think would improve readability. 
+ represent the visual design that I think would improve readability. -DB
  
- 1/20/2017
- Debugged some of the switches. _-EB_
+ ###1/20/2017
+ Debugged some of the switches. -EB
+
+ ###3/6/2017
+  I implemented basic save and load state mechanics. The user now has the ability to start a new game, create their character, and save the changes to XML.
+ This gives the user the ability to comeback to the game and load their character information. TL;DR I implemented persistence. -DB		

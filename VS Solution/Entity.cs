@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Schema;
 using System.Xml.Serialization;
 
 namespace TextAdv
@@ -51,28 +53,20 @@ namespace TextAdv
 
         //variable declaration
         
-        public static string EntName { get; set; }
-        public static string EntGender { get; set; }
-        public static string EntFacialHair { get; set; }
-        public static string EntHairStyle { get; set; }
-        public static string EntHairColor { get; set; }
-        public static string EntSpecies { get; set; }
-        public static string EntHeight { get; set; }
-        public static string EntWeight { get; set; }
-        public static string EntBuild { get; set; }
+        public string EntName { get; set; }
+        public string EntGender { get; set; }
+        public string EntFacialHair { get; set; }
+        public string EntHairStyle { get; set; }
+        public string EntHairColor { get; set; }
+        public string EntSpecies { get; set; }
+        public string EntHeight { get; set; }
+        public string EntWeight { get; set; }
+        public string EntBuild { get; set; }
         
 
         public HumanEntity()
         {
-            //HumanEntity.EntName = EntName;
-            //HumanEntity.EntGender = EntGender;
-            //HumanEntity.EntFacialHair = EntFacialHair;
-            //HumanEntity.EntHairStyle = EntHairStyle;
-            //HumanEntity.EntHairColor = EntHairColor;
-            //HumanEntity.EntSpecies = EntSpecies;
-            //HumanEntity.EntHeight = EntHeight;
-            //HumanEntity.EntWeight = EntWeight;
-            //HumanEntity.EntBuild = EntBuild;
+            
         }
 
         
@@ -90,12 +84,12 @@ namespace TextAdv
             // In the main loop (subject to improvement) call the asnUsrName method/function.
             // Within the asnUsrName method/function, we prompt the user to enter the name of their character, and assign it to the usrName variable.   
             NarraText.IntroScrawl(NarraText.TextStore(3));//Enter your name
-            HumanEntity.EntName = Console.ReadLine();
+            nuChar.EntName = Console.ReadLine();
             //Below I am assigning strings to variables to aid in the use of the introScrawl method.
-            string usrNameCreationA = HumanEntity.EntName + " ..." + " Really?\n";
-            string usrNameCreationB = HumanEntity.EntName + "... That sounds rather effeminate... Whatever... Yolo #Nojudgement\n";
-            string usrNameCreationC = "Are you sure that " + HumanEntity.EntName + " is your name? Y or N";
-            string usrNameCreationD = "Vundabar! " + HumanEntity.EntName + " it is.";
+            string usrNameCreationA = nuChar.EntName + " ..." + " Really?\n";
+            string usrNameCreationB = nuChar.EntName + "... That sounds rather effeminate... Whatever... Yolo #Nojudgement\n";
+            string usrNameCreationC = "Are you sure that " + nuChar.EntName + " is your name? Y or N";
+            string usrNameCreationD = "Vundabar! " + nuChar.EntName + " it is.";
             NarraText.IntroScrawl("\n" + usrNameCreationA + usrNameCreationB + "\n" + usrNameCreationC + "\n");
             validateName = Console.ReadLine().ToUpper();
             // If the user enters Y, the while loop is obviously bypassed.
@@ -103,11 +97,11 @@ namespace TextAdv
             {
                 // Instead of re-assigning (or doing something more clever) I hard coded the responses here.
                 NarraText.IntroScrawl("So, what is your name then?");
-                HumanEntity.EntName = Console.ReadLine();
-                Console.Write(HumanEntity.EntName);
+                nuChar.EntName = Console.ReadLine();
+                Console.Write(nuChar.EntName);
                 NarraText.IntroScrawl(" ... That sounds rather effeminate... Whatever... Yolo #Nojudgement");
                 NarraText.IntroScrawl("Are you sure that ");
-                Console.Write(HumanEntity.EntName);
+                Console.Write(nuChar.EntName);
                 NarraText.IntroScrawl(" is your name? Y or N");
                 validateName = Console.ReadLine().ToUpper();
 
@@ -117,7 +111,7 @@ namespace TextAdv
             NarraText.IntroScrawl(usrNameCreationD);
             
 
-            return HumanEntity.EntName;
+            return nuChar.EntName;
         }
         #endregion   
         
@@ -125,385 +119,406 @@ namespace TextAdv
         public static string ChrCrtn(string objName)
         {
 
-            
-            HumanEntity HumanEntity = new HumanEntity();
-            string failMessage = "You blew it!";
-            switch (objName)
-            {
-                
-                case "Gender":
+            //string fileName = "HumanEntity.xml";
+            HumanEntity nuChar = new HumanEntity();
+            // using (var stream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
+            // {
+            //     var XML = new XmlSerializer(typeof(nuChar));
+
+
+
+                string failMessage = "You blew it!";
+                switch (objName)
                 {
-                    NarraText.IntroScrawl(NarraText.TextStore(4));
-                    string usrIn = Console.ReadLine();
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
+
+                    case "Gender":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(4));
+                            string usrIn = Console.ReadLine();
+
+                            switch (usrIn)
                             {
-                                HumanEntity.EntGender = "Male";
-                                break;
+                                case "1":
+                                    {
+
+                                        nuChar.EntGender = "Male";
+                                        //XML.Serialize(stream, nuChar.EntGender = "Male");
+
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntGender = "Female";
+                                        //XML.Serialize(stream, nuChar.EntGender = "Female");
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
                             }
-                        case "2":
+                            return nuChar.EntGender;
+                        }
+                    case "FacialHair":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(5));
+                            NarraText.IntroScrawl(NarraText.TextStore(6));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
                             {
-                                HumanEntity.EntGender = "Female";
-                                break;
+                                case "1":
+                                    {
+                                        nuChar.EntFacialHair = "Long and Braided";
+                                        //XML.Serialize(stream, nuChar.EntFacialHair = "Long and Braided");
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntFacialHair = "Big and Bushy";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Big and Bushy");
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntFacialHair = "Wildman";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Wildman");
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntFacialHair = "Fu-Man Chu";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Fu-Man Chu");
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntFacialHair = "C'mon Bruther";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "C'mon Bruther");
+                                        break;
+                                    }
+                                case "6":
+                                    {
+                                        nuChar.EntFacialHair = "Mutton Chops";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Mutton Chops");
+                                        break;
+                                    }
+                                case "7":
+                                    {
+                                        nuChar.EntFacialHair = "Thin 'n Dirty";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Thin 'n Dirty");
+                                        break;
+                                    }
+                                case "8":
+                                    {
+                                        nuChar.EntFacialHair = "The Sparrow";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "The Sparrow");
+                                        break;
+                                    }
+                                case "9":
+                                    {
+                                        nuChar.EntFacialHair = "Honest Abe";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Honest Abe");
+                                        break;
+                                    }
+                                case "10":
+                                    {
+                                        nuChar.EntFacialHair = "Prepubescent";
+                                        // XML.Serialize(stream, nuChar.EntFacialHair = "Prepubescent");
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
                             }
-                        default:
+                            return nuChar.EntFacialHair;
+                        }
+                    case "HairStyle":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(7));
+                            NarraText.IntroScrawl(NarraText.TextStore(8));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
                             {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
+                                case "1":
+                                    {
+                                        nuChar.EntHairStyle = "Long and Free";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntHairStyle = "Soldier";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntHairStyle = "Tonsure";
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntHairStyle = "Top-Knot";
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntHairStyle = "Shaved";
+                                        break;
+                                    }
+                                case "6":
+                                    {
+                                        nuChar.EntHairStyle = "Afro";
+                                        break;
+                                    }
+                                case "7":
+                                    {
+                                        nuChar.EntHairStyle = "Shoulder Length";
+                                        break;
+                                    }
+                                case "8":
+                                    {
+                                        nuChar.EntHairStyle = "HighTop-Fade";
+                                        break;
+                                    }
+                                case "9":
+                                    {
+                                        nuChar.EntHairStyle = "Long Dreads";
+                                        break;
+                                    }
+                                case "10":
+                                    {
+                                        nuChar.EntHairStyle = "Long Shaved Sides";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
                             }
-                    }
-                    return HumanEntity.EntGender;
+                            return nuChar.EntHairStyle;
+
+                        }
+                    case "HairColor":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(9));
+                            NarraText.IntroScrawl(NarraText.TextStore(10));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
+                            {
+                                case "1":
+                                    {
+                                        nuChar.EntHairColor = "Black";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntHairColor = "Brown";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntHairColor = "Blonde";
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntHairColor = "Red";
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntHairColor = "White";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
+                            }
+                            return nuChar.EntHairColor;
+
+                        }
+                    case "Species":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(11));
+                            NarraText.IntroScrawl(NarraText.TextStore(12));
+                            string usrIn = Console.ReadLine();
+
+                            switch (usrIn)
+                            {
+                                case "1":
+                                    {
+                                        nuChar.EntSpecies = "Human";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntSpecies = "Dwarf";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntSpecies = "Elf";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
+                            }
+                            return nuChar.EntSpecies;
+                        }
+                    case "Height":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(13));
+                            NarraText.IntroScrawl(NarraText.TextStore(14));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
+                            {
+                                case "1":
+                                    {
+                                        nuChar.EntHeight = "Short";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntHeight = "Average";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntHeight = "Tall";
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntHeight = "Giant";
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntHeight = "How's the weather up there";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
+                            }
+                            return nuChar.EntHeight;
+
+                        }
+                    case "Weight":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(15));
+                            NarraText.IntroScrawl(NarraText.TextStore(16));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
+                            {
+                                case "1":
+                                    {
+                                        nuChar.EntWeight = "Feather Weight";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntWeight = "Average";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntWeight = "Big'un";
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntWeight = "Brick House";
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntWeight = "Fluffy";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
+                            }
+                            return nuChar.EntWeight;
+
+                        }
+                    case "Build":
+                        {
+                            NarraText.IntroScrawl(NarraText.TextStore(17));
+                            NarraText.IntroScrawl(NarraText.TextStore(18));
+                            string usrIn = Console.ReadLine();
+
+
+                            switch (usrIn)
+                            {
+                                case "1":
+                                    {
+                                        nuChar.EntBuild = "Struggles to lift soap";
+                                        break;
+                                    }
+                                case "2":
+                                    {
+                                        nuChar.EntBuild = "Average";
+                                        break;
+                                    }
+                                case "3":
+                                    {
+                                        nuChar.EntBuild = "Fit";
+                                        break;
+                                    }
+                                case "4":
+                                    {
+                                        nuChar.EntBuild = "Ripped";
+                                        break;
+                                    }
+                                case "5":
+                                    {
+                                        nuChar.EntBuild = "Roids";
+                                        break;
+                                    }
+                                default:
+                                    {
+                                        NarraText.IntroScrawl(NarraText.TextStore(13));
+                                        break;
+                                    }
+                            }
+                            return nuChar.EntBuild;
+
+                        }
+                    default:
+                        {
+                            return failMessage;
+                        }
+
+
                 }
-                case "FacialHair":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(5));
-                    NarraText.IntroScrawl(NarraText.TextStore(6));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntFacialHair = "Long and Braided";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntFacialHair = "Big and Bushy";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntFacialHair = "Wildman";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntFacialHair = "Fu-Man Chu";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntFacialHair = "C'mon Bruther";
-                                break;
-                            }
-                        case "6":
-                            {
-                                HumanEntity.EntFacialHair = "Mutton Chops";
-                                break;
-                            }
-                        case "7":
-                            {
-                                HumanEntity.EntFacialHair = "Thin 'n Dirty";
-                                break;
-                            }
-                        case "8":
-                            {
-                                HumanEntity.EntFacialHair = "The Sparrow";
-                                break;
-                            }
-                        case "9":
-                            {
-                                HumanEntity.EntFacialHair = "Honest Abe";
-                                break;
-                            }
-                        case "10":
-                            {
-                                HumanEntity.EntFacialHair = "Prepubescent";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntFacialHair;
-                }
-                case "HairStyle":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(7));
-                    NarraText.IntroScrawl(NarraText.TextStore(8));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntHairStyle = "Long and Free";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntHairStyle = "Soldier";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntHairStyle = "Tonsure";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntHairStyle = "Top-Knot";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntHairStyle = "Shaved";
-                                break;
-                            }
-                        case "6":
-                            {
-                                HumanEntity.EntHairStyle = "Afro";
-                                break;
-                            }
-                        case "7":
-                            {
-                                HumanEntity.EntHairStyle = "Shoulder Length";
-                                break;
-                            }
-                        case "8":
-                            {
-                                HumanEntity.EntHairStyle = "HighTop-Fade";
-                                break;
-                            }
-                        case "9":
-                            {
-                                HumanEntity.EntHairStyle = "Long Dreads";
-                                break;
-                            }
-                        case "10":
-                            {
-                                HumanEntity.EntHairStyle = "Long Shaved Sides";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntHairStyle;
-
-                }
-                case "HairColor":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(9));
-                    NarraText.IntroScrawl(NarraText.TextStore(10));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntHairColor = "Black";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntHairColor = "Brown";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntHairColor = "Blonde";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntHairColor = "Red";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntHairColor = "White";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntHairColor;
-
-                }
-                case "Species":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(11));
-                    NarraText.IntroScrawl(NarraText.TextStore(12));
-                    string usrIn = Console.ReadLine();
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntSpecies = "Human";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntSpecies = "Dwarf";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntSpecies = "Elf";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntSpecies;
-                }
-                case "Height":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(13));
-                    NarraText.IntroScrawl(NarraText.TextStore(14));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntHeight = "Short";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntHeight = "Average";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntHeight = "Tall";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntHeight = "Giant";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntHeight = "How's the weather up there";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntHeight;
-
-                }
-                case "Weight":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(15));
-                    NarraText.IntroScrawl(NarraText.TextStore(16));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntWeight = "Feather Weight";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntWeight = "Average";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntWeight = "Big'un";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntWeight = "Brick House";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntWeight = "Fluffy";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntWeight;
-
-                }
-                case "Build":
-                {
-                    NarraText.IntroScrawl(NarraText.TextStore(17));
-                    NarraText.IntroScrawl(NarraText.TextStore(18));
-                    string usrIn = Console.ReadLine();
-
-                    
-                    switch (usrIn)
-                    {
-                        case "1":
-                            {
-                                HumanEntity.EntBuild = "Struggles to lift soap";
-                                break;
-                            }
-                        case "2":
-                            {
-                                HumanEntity.EntBuild = "Average";
-                                break;
-                            }
-                        case "3":
-                            {
-                                HumanEntity.EntBuild = "Fit";
-                                break;
-                            }
-                        case "4":
-                            {
-                                HumanEntity.EntBuild = "Ripped";
-                                break;
-                            }
-                        case "5":
-                            {
-                                HumanEntity.EntBuild = "Roids";
-                                break;
-                            }
-                        default:
-                            {
-                                NarraText.IntroScrawl(NarraText.TextStore(13));
-                                break;
-                            }
-                    }
-                    return HumanEntity.EntBuild;
-
-                }
-                default:
-                {
-                    return failMessage;
-                }
-                    
-
-            }
             
 
         }
+                
         #endregion
     }
     #endregion

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 /*
@@ -9,7 +10,7 @@ using System.Xml.Serialization;
  So, within the SaveGame method we would read the stream from memory, to find the object data. We would then serialize that data to XML via XmlSerializer.
 
  I am going to try just making a stream array of active elements within each attribute assignment and test that. If that doesn't work, I am also going to look a serializing the entire application (i.e. All class fully).
-
+Look into enumeration of the HumanEntity object.
 */
 namespace TextAdv
 {
@@ -17,131 +18,83 @@ namespace TextAdv
     public class EngineMech
     {
         #region New Game Method
-<<<<<<< HEAD
         public static void NewGame()
-=======
-        public static void newGame()
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
-
+            
             NarraText.IntroScrawl(NarraText.TextStore(2));
-            HumanEntity.AsnUsrName();
-            HumanEntity.ChrCrtn("Gender");
-            HumanEntity.ChrCrtn("FacialHair");
-            HumanEntity.ChrCrtn("HairStyle");
-            HumanEntity.ChrCrtn("HairColor");
-            HumanEntity.ChrCrtn("Species");
-            HumanEntity.ChrCrtn("Height");
-            HumanEntity.ChrCrtn("Weight");
-            HumanEntity.ChrCrtn("Build");
+            HumanEntity playerChar = new HumanEntity();
+
+            playerChar.EntName = HumanEntity.AsnUsrName();
+            playerChar.EntGender = HumanEntity.ChrCrtn("Gender");
+            playerChar.EntFacialHair = HumanEntity.ChrCrtn("FacialHair");
+            playerChar.EntHairStyle = HumanEntity.ChrCrtn("HairStyle");
+            playerChar.EntHairColor = HumanEntity.ChrCrtn("HairColor");
+            playerChar.EntSpecies = HumanEntity.ChrCrtn("Species");
+            playerChar.EntHeight = HumanEntity.ChrCrtn("Height");
+            playerChar.EntWeight = HumanEntity.ChrCrtn("Weight");
+            playerChar.EntBuild = HumanEntity.ChrCrtn("Build");
+
+            SaveGame(true, playerChar, "UserState.xml");
             NarraText.IntroScrawl(NarraText.TextStore(31));
             Console.ReadLine();
-            SaveGame(true);
-
             
-
-
         }
         #endregion
-<<<<<<< HEAD
 
 
         #region Save Game Method *init XML Serializer Write*
         // Currently I am using a bool to define the functionality of saveGame.
         // This is not optimal, but the action of saveGame will only have two modes.
         // First Run: SaveGame has not been run in recent context OR Second Run: SaveGame has been run in recent context. 
-        public static void SaveGame(bool firstRun)
-=======
 
 
-        #region Save Game Method *init XML Serializer Write*
-        public static void saveGame()
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
+        public static void SaveGame<T>(bool firstRun, T data, string xml)
         {
-
-            string fileName = "HumanEntity.xml";
-
-            //serialize objects/data
-            // If firstRun is true, prompt the user to decide whether or not to save
             if (firstRun)
             {
+                //serialize objects/ data
+                //If firstRun is true, prompt the user to decide whether or not to save
                 NarraText.IntroScrawl(NarraText.TextStore(27));
                 string choice = Console.ReadLine().ToUpper();
+                firstRun = false;
+
                 // User choice is Y, recursively run saveGame method specifiying false parameter
                 if (choice == "Y")
                 {
-                    SaveGame(false);
+                    SaveGame<T>(false, data, xml);
                 }
 
-            }
-            else
-            {
-                // If firstRun is false, the XML Serialization process will begin
-                
-                using (var stream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    var humanEnt = (new HumanEntity() {EntName = HumanEntity.EntName )
-                    
-
-                    var XML = new XmlSerializer(typeof(HumanEntity));
-
-                    XML.Serialize(stream, humanEnt);
-                    
-                }
-
-                    
-                //HumanEntity boy = new HumanEntity();
-                
-                //XmlManager<object> saver = new XmlManager<object>();
-                
-                //IList<PropertyInfo> test = new List<PropertyInfo>(boy.GetType().GetProperties());
-
-                //string path = @"A:\Documents\Code\colab-pj1\VS Solution\testXML.xml";
-
-                //saver.Save(path, boy.GetProperties());
-                        
-                
-                //HumanEntity testObj = new HumanEntity();
-                //Type type = testObj.GetType();
-                //IList<PropertyInfo> eval = new List<PropertyInfo>(type.GetProperties());
-
-                //foreach (PropertyInfo i in eval)
-                //{
-                //    test.Save(path, eval);
-                //}
 
 
             }
 
+            var serializer = new XmlSerializer(typeof(T));
 
+            TextWriter writer = new StreamWriter(xml);
 
-
-
+            serializer.Serialize(writer, data);
         }
         #endregion
 
-        #region Load Game Method *ini XML Serializer Read*
-<<<<<<< HEAD
-        public static void LoadGame()
-=======
-        public static void loadGame()
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
+        #region Load Game Method *init XML Serializer Read*
+
+        public static T LoadGame<T>(string xml)
         {
             // Deserailize data
-            
-            NarraText.IntroScrawl(NarraText.TextStore(28));
-            
-            Console.ReadKey();
-            
+            var serializer = new XmlSerializer(typeof(T));
+
+            FileStream fileName = new FileStream(xml, FileMode.OpenOrCreate);
+
+            using (TextReader reader = new StreamReader(fileName))
+            {
+                return (T)serializer.Deserialize(reader);
+            }
         }
+        
         #endregion
 
         #region Options Menu Method
-<<<<<<< HEAD
         public static void OptionsMenu()
-=======
-        public static void optionsMenu()
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             string usrMod;
             int orgConWidth, maxConWidth, usrConWidth;
@@ -200,11 +153,7 @@ namespace TextAdv
         #endregion
 
         #region Help Menu Method
-<<<<<<< HEAD
         public static string HelpMenu()
-=======
-        public static string helpMenu()
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             string x = "Sorry";
             NarraText.IntroScrawl(NarraText.TextStore(30));
@@ -213,11 +162,7 @@ namespace TextAdv
         #endregion
         
         #region Main Menu *Can call all other menu items*
-<<<<<<< HEAD
         public static string MainMenu(string menuOptChk)
-=======
-        public static string mainMenu(string menuOptChk)
->>>>>>> cfe0466a95148c733b25c072002ad0ee239f8e9c
         {
             
             if (menuOptChk == "")
@@ -234,7 +179,7 @@ namespace TextAdv
                         }
                     case "2":
                         {
-                            LoadGame();
+                            LoadGame<HumanEntity>("UserState.xml");
                             break;
                         }
                     case "3":
@@ -263,12 +208,12 @@ namespace TextAdv
                 {
                     case "1":
                         {
-                            SaveGame(true);
+                            //SaveGame(true, HumanEntity,  );
                             break;
                         }
                     case "2":
                         {
-                            LoadGame();
+                            //LoadGame();
                             break;
                         }
                     case "3":
@@ -314,31 +259,4 @@ namespace TextAdv
     }
     #endregion
 
-    #region XML Manager Generic Class **WIP**
-    //public class XmlManager<T>
-    //{
-    //    //public static Type Type { get; private set; }
-
-    //    public T Load(string path)
-    //    {
-    //        T instance;
-    //        using (TextReader reader = new StreamReader(path))
-    //        {
-
-    //            XmlSerializer xml = new XmlSerializer(Type);
-    //            instance = (T)xml.Deserialize(reader);
-    //        }
-    //        return instance;
-    //    }
-
-    //    public void Save(string path, object obj)
-    //    {
-    //        using (TextWriter writer = new StreamWriter(path))
-    //        {
-    //            XmlSerializer xml = new XmlSerializer(typeof(object));
-    //            xml.Serialize(writer, obj);
-    //        }
-    //    }
-    //}
-    #endregion
 }
