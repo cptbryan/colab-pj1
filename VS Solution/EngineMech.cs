@@ -35,7 +35,7 @@ namespace TextAdv
             playerChar.EntBuild = HumanEntity.ChrCrtn("Build");
 
             SaveGame(true, playerChar, "UserState.xml");
-            NarraText.IntroScrawl(NarraText.TextStore(31));
+            
             Console.ReadLine();
             
         }
@@ -73,6 +73,7 @@ namespace TextAdv
             TextWriter writer = new StreamWriter(xml);
 
             serializer.Serialize(writer, data);
+            writer.Close();
         }
         #endregion
 
