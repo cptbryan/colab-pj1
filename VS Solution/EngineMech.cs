@@ -132,23 +132,6 @@ namespace TextAdv
 
 
             }
-                         
-            //narraText.introScrawl(narraText.textStore(29));
-            //Console.ReadKey();
-            
-           
-            
-            /*Read/write user modifiable options to xml
-            
-                This will consit of 
-                 - Background Color
-                 - Text Color
-                 - Text Scroll Speed
-                 - Font Size
-                 - Turn Intro on or off
-                 - ?Any other Ideas?
-            */
-
         }
         #endregion
 
@@ -242,18 +225,6 @@ namespace TextAdv
                 return gameMenu;
             }
             return menuOptChk;
-            
-
-            /*In game menu for user to access.
-
-                This will consist of 
-                 - New Game (if not already in loop)
-                 - Save Game
-                 - Options
-                 - Help
-                 - Exit
-            */
-
         }
         #endregion
     }
